@@ -8,7 +8,8 @@ import { auth } from "./firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout, selectUser } from "./features/userSlice";
 import ProfileScreen from "./screens/ProfileScreen";
-import Player from "./screens/Player";
+import Player from "./player/Player";
+import Trailer from "./player/Trailer";
 
 function App() {
   // đăng nhập r sẽ load về trang chủ
@@ -45,6 +46,7 @@ function App() {
           <Route path="/profile" element={<ProfileScreen />}></Route>
           <Route path="/" element={<HomeScreen />}></Route>
           <Route path="/player" element={<Player />}></Route>
+          <Route path="/trailer" element={<Trailer />}></Route>
         </Routes>
       )}
     </div>

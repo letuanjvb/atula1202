@@ -3,10 +3,12 @@ import React, { useEffect, useState } from "react";
 import "./Banner.css";
 import requests from "./Requests";
 import { useNavigate } from "react-router-dom";
-import videoBg from './videos/Black-panther.mp4';
+import videoBg from "./videos/Avengers-banner.webm";
+// import bannerImgHover from "./images/banner.jpg";
 
 const Banner = () => {
   const history = useNavigate();
+  const [isShown, setIsShown] = useState(false);
   //tạo một bộ phim
   const [movie, setMovie] = useState([]);
 
@@ -36,14 +38,31 @@ const Banner = () => {
       <video src={videoBg} autoPlay loop muted/>
       <div className="banner_contents">
         <h1 className="banner_title">
-          Black Panther 2
+          Avengers - Endgame
         </h1>
         <div className="banner_buttons">
-          <button className="banner_button" onClick={() => history("/player")}>Trailer
+          <button className="banner_button" onClick={() => history("/trailer")}>Trailer
           </button>
-          <button className="banner_button">Play</button>
+          <button className="banner_button" onClick={() => history("/player")}>Xem phim
+          </button>
+          <button className="banner_button" onClick={() => history("/player")} onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)}>Thông tin khác
+          </button>
+          {isShown && (
+          <div className="banner_button_hover">
+            <h1>Avengers - Endgame</h1>
+            <div>Thời lượng: 181 Phút</div>
+            <div>Thể loại: Phim Hành Động, Phim Viễn Tưởng, Phim Phiêu Lưu, Phim Chiếu Rạp</div>
+            <div>Điểm IMDb:8,7</div>
+            <div>Năm Phát Hành: 2019</div>
+            <div>Quốc gia: Phim Âu Mỹ</div>
+            <div>Diễn viên:</div>
+            <div>Đạo diễn:</div>
+            {/* <img src={bannerImgHover} alt=""/> */}
+          </div>
+          )}
         </div>
-        <h1 className="banner_description">Nữ hoàng Ramonda, Shuri, M’Baku, Okoye và Dora Milaje chiến đấu để bảo vệ quốc gia của họ khỏi sự can thiệp của các thế lực thế giới sau cái chết của Vua T’Challa. Khi người Wakanda cố gắng nắm bắt chương tiếp theo của họ, các anh hùng phải hợp tác với nhau với sự giúp đỡ của War Dog Nakia và Everett Ross và tạo ra một con đường mới cho vương quốc Wakanda.
+        <h1 className="banner_description">
+        Cú búng tay của Thanos đã khiến toàn bộ dân số biến mất một nửa. Các siêu anh hùng đánh mất bạn bè, người thân và đánh mất cả chính mình. Bộ sáu Avengers đầu tiên tứ tán. Iron Man kẹt lại ngoài không gian, Hawkeye mất tích. Thor, Captain America, Hulk và Black Widow đều chìm trong nỗi đau vô tận vì mất đi những người thân yêu. Họ phải làm gì để cứu vãn mọi chuyện ở Avengers: Hồi Kết?
           {/* {truncate(''movie?.overview'', 150)} */}
           </h1>
       </div>
