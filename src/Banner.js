@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import './Banner.css';
 import requests from './Requests';
 import { useNavigate } from 'react-router-dom';
-import videoBg from './videos/Avengers-banner.webm';
+// import videoBg from './videos/Avengers-banner.webm';
 // import bannerImgHover from './images/banner.jpg';
 
 const Banner = () => {
@@ -30,7 +30,12 @@ const Banner = () => {
 
   return (
     <header className="banner">
-      <video src={videoBg} autoPlay loop muted />
+      <video
+        src={'https://cdn.glitch.me/cbf2cfb4-aa52-4a1f-a73c-461eef3d38e8/1080.mp4'}
+        autoPlay
+        loop
+        muted
+      />
       <div className="banner_contents">
         <h1 className="banner_title"> Avengers - Endgame </h1>
         <div className="banner_buttons">
