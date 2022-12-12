@@ -1,3 +1,7 @@
 .tuby-container {
   height: 87.25%;
 }
+
+.tuby {
+  overflow: visible;
+}
