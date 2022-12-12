@@ -19,6 +19,7 @@
 import React from 'react';
 import { Player } from 'react-tuby';
 import 'react-tuby/css/main.css';
+import './Player.css';
 // import "./Tuby.css";
 
 const Tuby = () => {
