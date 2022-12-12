@@ -1,15 +1,16 @@
-import React, { useEffect } from "react";
-import "./App.css";
-import HomeScreen from "./screens/HomeScreen";
+import React, { useEffect } from 'react';
+import './App.css';
+import HomeScreen from './screens/HomeScreen';
 // eslint-disable-next-line no-unused-vars
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LoginSreen from "./screens/LoginSreen";
-import { auth } from "./firebase";
-import { useDispatch, useSelector } from "react-redux";
-import { login, logout, selectUser } from "./features/userSlice";
-import ProfileScreen from "./screens/ProfileScreen";
-import Player from "./player/Player";
-import Trailer from "./player/Trailer";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LoginSreen from './screens/LoginSreen';
+import { auth } from './firebase';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout, selectUser } from './features/userSlice';
+import ProfileScreen from './screens/ProfileScreen';
+import Player from './player/Player';
+import Trailer from './player/Trailer';
+import FilmInfo from './player/FilmInfo';
 
 function App() {
   // đăng nhập r sẽ load về trang chủ
@@ -24,7 +25,7 @@ function App() {
         dispatch(
           login({
             uid: userAuth.uid,
-            email: userAuth.email,
+            email: userAuth.email
           })
         );
       } else {
@@ -47,6 +48,7 @@ function App() {
           <Route path="/" element={<HomeScreen />}></Route>
           <Route path="/player" element={<Player />}></Route>
           <Route path="/trailer" element={<Trailer />}></Route>
+          <Route path="/filminfo" element={<FilmInfo />}></Route>
         </Routes>
       )}
     </div>

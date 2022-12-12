@@ -1,9 +1,9 @@
-import React from "react";
-import "./ProfileScreen.css";
-import { useSelector } from "react-redux";
-import Nav from "../Nav";
-import { selectUser } from "../features/userSlice";
-import { auth } from "../firebase";
+import React from 'react';
+import './ProfileScreen.css';
+import { useSelector } from 'react-redux';
+import Nav from '../Nav';
+import { selectUser } from '../features/userSlice';
+import { auth } from '../firebase';
 
 const ProfileScreen = () => {
   const user = useSelector(selectUser);
@@ -12,16 +12,15 @@ const ProfileScreen = () => {
     <div className="profileScreen">
       <Nav />
       <div className="profileScreen_body">
-        <h1>Chỉnh sửa hồ sơ </h1>
+        <h1>Hồ sơ cá nhân </h1>
         <div className="profileScreen_info">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-            alt=""
-          ></img>
+            alt=""></img>
           <div className="profileScreen_details">
             <h2>{user.email}</h2>
             <div className="profileScreen_plans">
-              <h3>Gói hội viên</h3>
+              <h3>Gói hội viên</h3> <p>Thường</p>
             </div>
           </div>
         </div>

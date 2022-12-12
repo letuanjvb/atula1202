@@ -1,9 +1,10 @@
-import React from "react";
-import Banner from "../Banner";
-import "./HomeScreen.css";
-import Nav from "../Nav";
-import requests from "../Requests";
-import Row from "../Row";
+import React from 'react';
+import Banner from '../Banner';
+import './HomeScreen.css';
+import Nav from '../Nav';
+import requests from '../Requests';
+import Row from '../Row';
+import Footer from '../Footer';
 
 const HomeScreen = () => {
   return (
@@ -15,11 +16,7 @@ const HomeScreen = () => {
       <Banner />
 
       {/* Row */}
-      <Row
-        title="NETFLIX ORIGINALS"
-        fetchUrl={requests.fetchNeflixOriginal}
-        isLargeRow 
-      />
+      <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNeflixOriginal} isLargeRow />
       <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
       <Row title="Top rated" fetchUrl={requests.fetchTopRated} />
       <Row title="Action Movied" fetchUrl={requests.fetchActionMovies} />
@@ -27,6 +24,7 @@ const HomeScreen = () => {
       <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
       <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
       <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+      <Footer />
     </div>
   );
 };

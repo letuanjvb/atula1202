@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
-import "./SignUpScreen.css";
-import { auth } from "../firebase";
+import React, { useRef } from 'react';
+import './SignUpScreen.css';
+import { auth } from '../firebase';
 
 const SignUpScreen = () => {
   //Chưa học useRef
@@ -12,10 +12,7 @@ const SignUpScreen = () => {
     e.preventDefault();
     // xác thực khi đăng ký
     auth
-      .createUserWithEmailAndPassword(
-        emailRef.current.value,
-        passwordRef.current.value
-      )
+      .createUserWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
       .then((authUser) => {
         console.log(authUser);
       })
@@ -28,10 +25,7 @@ const SignUpScreen = () => {
     e.preventDefault();
     // xác thực khi đăng nhập
     auth
-      .signInWithEmailAndPassword(
-        emailRef.current.value,
-        passwordRef.current.value
-      )
+      .signInWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
       .then((authUser) => {
         console.log(authUser);
       })

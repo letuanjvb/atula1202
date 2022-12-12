@@ -1,15 +1,15 @@
-import firebase from "firebase/compat/app";
-import "firebase/compat/auth";
-import "firebase/compat/firestore";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 // lấy ở comment
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBZ3Cz_n-l1bLBMhttMiHunVBFJmJCfrDc",
-  authDomain: "netflix-clone-minh.firebaseapp.com",
-  projectId: "netflix-clone-minh",
-  storageBucket: "netflix-clone-minh.appspot.com",
-  messagingSenderId: "316781052550",
-  appId: "1:316781052550:web:5b672443e3fa37077cc707",
+  apiKey: 'AIzaSyCtpiKl__LbgZ2GVL1F4PoRSlqpaEHPpBo',
+  authDomain: 'netflix-clone-77faf.firebaseapp.com',
+  projectId: 'netflix-clone-77faf',
+  storageBucket: 'netflix-clone-77faf.appspot.com',
+  messagingSenderId: '969313058050',
+  appId: '1:969313058050:web:27934e7eeb95ada989d61b'
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
