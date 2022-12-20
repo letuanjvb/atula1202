@@ -1,0 +1,84 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.profileScreen {
+  margin-top: 120px;
+  height: 100vh;
+  color: white;
+  background-color: black;
+}
+
+.profileScreen_body {
+  display: flex;
+  width: 70%;
+  padding-top: 10%;
+  max-width: 800px;
+}
+.profileScreen_body label {
+  font-size: 40px;
+  color: white;
+}
+.profileScreen_body p {
+  font-size: 16px;
+  color: gray;
+  font-weight: 600;
+}
+
+.profileScreen_article{
+  display: flex;
+  margin: 1rem 0rem;
+  padding: 1rem 0rem;
+  border-top: 1px solid gray;
+  gap: 6%
+}
+
+.profileScreen_label{
+  font-size: 30px;
+  width: 27%;
+}
+.profileScreen_content{
+  padding: 5px 0px;
+  width: 40%;
+}
+.profileScreen_footer{
+  width: 27%;
+}
+
+.profileScreen_footer3{
+  color: blue;
+  padding: 5px 0px;
+}
+.profileScreen_footer3:hover{
+  cursor: pointer;
+}
+
+.profileScreen_footer button{
+  padding: 1.5rem;
+  background-color: red;
+  color: white;
+  opacity: 0.9;
+  border-radius: 5px;
+  line-height: 0px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.profileScreen_footer button:hover{
+  cursor: pointer;
+  opacity: 1.2;
+}
+
+.profileScreen_label button{
+  padding: 5px;
+  margin-left: 10px;
+  opacity: 0.9;
+}
+.profileScreen_label button:hover{
+  opacity: 1.2;
+  cursor: pointer;
+}
+
+.profileScreen_content1{
+  padding: 5px 0px;
+}

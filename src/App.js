@@ -1,16 +1,18 @@
-import React, { useEffect } from 'react';
-import './App.css';
-import HomeScreen from './screens/HomeScreen';
+import React, { useEffect } from "react";
+import "./styles/App.css";
+import HomeScreen from "./pages/Home/HomeScreen";
 // eslint-disable-next-line no-unused-vars
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LoginSreen from './screens/LoginSreen';
-import { auth } from './firebase';
-import { useDispatch, useSelector } from 'react-redux';
-import { login, logout, selectUser } from './features/userSlice';
-import ProfileScreen from './screens/ProfileScreen';
-import Player from './player/Player';
-import Trailer from './player/Trailer';
-import FilmInfo from './player/FilmInfo';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import LoginSreen from "./pages/loginPage/LoginSreen";
+import { auth } from "./Library/firebase";
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout, selectUser } from "./features/userSlice";
+import ProfileScreen from "./pages/profile/ProfileScreen";
+import Player from "./pages/player/Player";
+import Trailer from "./pages/player/Trailer";
+import FilmInfo from "./components/Movie/FilmInfo";
+import SignUpScreen from "./components/LoginForm/SignUpScreen";
+import UserSetting from "./pages/profile/ProfileSetting";
 
 function App() {
   // đăng nhập r sẽ load về trang chủ
@@ -25,7 +27,7 @@ function App() {
         dispatch(
           login({
             uid: userAuth.uid,
-            email: userAuth.email
+            email: userAuth.email,
           })
         );
       } else {
@@ -39,7 +41,7 @@ function App() {
   return (
     <div className="App">
       {/* <HomeScreen /> */}
-      {/* bat buoc phai co tai khoan */}
+      {/* bat buoc phai co tai khoan, neu khong se back ve Login */}
       {!user ? (
         <LoginSreen />
       ) : (
@@ -49,6 +51,8 @@ function App() {
           <Route path="/player" element={<Player />}></Route>
           <Route path="/trailer" element={<Trailer />}></Route>
           <Route path="/filminfo" element={<FilmInfo />}></Route>
+          <Route path="/signup" element={<SignUpScreen />}></Route>
+          <Route path="/usersetting" element={<UserSetting />}></Route>
         </Routes>
       )}
     </div>

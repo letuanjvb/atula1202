@@ -1,7 +1,13 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .row {
   color: white;
   margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .row_posters {
@@ -19,15 +25,15 @@
 .row_poster {
   max-height: 100px;
   object-fit: contain;
-  margin-right: 10px;
+  margin-right: 20px;
   width: 100%;
   transition: transform 450ms;
 }
 
 .row_poster:hover {
-  transform: scale(1.1);
+  transform: scale(1.4);
   opacity: 1;
-  transition: 1s;
+  transition: 0.3s;
 }
 
 .row_posterLarge {
@@ -35,7 +41,7 @@
 }
 
 .row_posterLarge:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
   opacity: 1;
-  transition: 1s;
+  transition: 0.2s;
 }
