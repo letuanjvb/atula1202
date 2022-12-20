@@ -1,9 +1,9 @@
 import React from 'react';
 import './ProfileScreen.css';
 import { useSelector } from 'react-redux';
-import Nav from '../Nav';
+import Nav from '../components/Header/Nav';
 import { selectUser } from '../features/userSlice';
-import { auth } from '../firebase';
+// import { auth } from '../Library/firebase';
 
 const ProfileScreen = () => {
   const user = useSelector(selectUser);

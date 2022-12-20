@@ -1,10 +1,10 @@
 import React from 'react';
-import Banner from '../Banner';
+import Banner from '../components/Banner/Banner.js';
 import './HomeScreen.css';
-import Nav from '../Nav';
-import requests from '../Requests';
+import Nav from '../components/Header/Nav';
+import requests from '../Library/Requests';
 import Row from '../Row';
-import Footer from '../Footer';
+import Footer from '../components/Footer/Footer';
 
 const HomeScreen = () => {
   return (

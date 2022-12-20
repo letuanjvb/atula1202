@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import './Player.css';
-import Nav from '../Nav';
+import Nav from '../components/Header/Nav';
 import TrailerControl from './TrailerControl';
 
 const Trailer = () => {
