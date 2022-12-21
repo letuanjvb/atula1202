@@ -1,8 +1,8 @@
-import React from "react";
-import "./Player.css";
-import Nav from "../../components/Nav/Nav";
-import PlayerControl from "../../components/Movie/PlayerControl";
-import FilmInfo from "../../components/Movie/FilmInfo";
+import React from 'react';
+import './Player.css';
+import Nav from '../../components/Header/Nav';
+import PlayerControl from './PlayerControl';
+import FilmInfo from './FilmInfo';
 
 const Player = () => {
   return (

@@ -1,35 +1,24 @@
-import React, { useRef } from "react";
-import "../LoginForm/SignInScreen.css";
-import { auth } from "../../Library/firebase";
+import React, { useRef } from 'react';
+import { signInWithPopup } from 'firebase/auth';
+import '../LoginForm/SignInScreen.css';
+import { Auth } from '../../config/firebase';
+import { auth, googleProvider } from '../../config/firebase';
+import { addUser } from '../../actions/fireStoreActions';
+// import { toast } from 'react-toastify';
+import { useStore } from '../../stored';
+import { useNavigate } from 'react-router-dom';
 
 const SignInScreen = () => {
+  const history = useNavigate();
   //Chưa học useRef
+  const { setLoading, loading } = useStore((state) => state);
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
-  const register = (e) => {
-    // chặn hoạt động mặc định của trình duyệt
-    e.preventDefault();
-    // xác thực khi đăng ký
-    auth
-      .createUserWithEmailAndPassword(
-        emailRef.current.value,
-        passwordRef.current.value
-      )
-      .then((authUser) => {
-        console.log(authUser);
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
-  };
+
   const signIn = (e) => {
     e.preventDefault();
     // xác thực khi đăng nhập
-    auth
-      .signInWithEmailAndPassword(
-        emailRef.current.value,
-        passwordRef.current.value
-      )
+    Auth.signInWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
       .then((authUser) => {
         console.log(authUser);
       })
@@ -37,8 +26,24 @@ const SignInScreen = () => {
         alert(error.message);
       });
   };
+
+  const handleLogin = async (Provider) => {
+    setLoading(true);
+    try {
+      const { _tokenResponse, user } = await signInWithPopup(auth, Provider);
+      const { displayName, email, photoURL, uid } = user;
+      if (_tokenResponse.isNewUser) {
+        await addUser({ displayName, email, photoURL, uid });
+      }
+      setLoading(false);
+    } catch (error) {
+      // toast.error(error.message);
+      setLoading(false);
+    }
+  };
+
   return (
-    <div className="signUpScreen">
+    <div className="signInScreen">
       <form>
         <h1>Đăng nhập</h1>
         <input ref={emailRef} placeholder="Email" type="email"></input>
@@ -48,11 +53,19 @@ const SignInScreen = () => {
         </button>
 
         <h5>
-          <span className="signupScreen_gray">Bạn mới tham gia Netflix? </span>
-          <span className="signupScreen_link" onClick={register}>
+          <span className="signInScreen_gray">Bạn mới tham gia Netflix? </span>
+          <span className="signupScreen_link" onClick={() => history('/signup')}>
             Đăng ký ngay.
           </span>
         </h5>
+
+        <button
+          className={`login-form-button login-form-google ${loading ? 'disableButton' : ''}`}
+          onClick={() => handleLogin(googleProvider)}
+          disabled={loading}>
+          <box-icon name="google" type="logo" flip="vertical" color="#f7eeee"></box-icon>
+          <span>Login with Google</span>
+        </button>
       </form>
     </div>
   );

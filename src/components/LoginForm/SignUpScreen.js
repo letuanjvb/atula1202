@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
-import "./SignInScreen.css";
-import { auth } from "../../Library/firebase";
+import React, { useRef } from 'react';
+import './SignInScreen.css';
+import { Auth } from '../../config/firebase';
 
 const SignUpScreen = () => {
   //Chưa học useRef
@@ -11,11 +11,7 @@ const SignUpScreen = () => {
     // chặn hoạt động mặc định của trình duyệt
     e.preventDefault();
     // xác thực khi đăng ký
-    auth
-      .createUserWithEmailAndPassword(
-        emailRef.current.value,
-        passwordRef.current.value
-      )
+    Auth.createUserWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
       .then((authUser) => {
         console.log(authUser);
       })
@@ -25,7 +21,7 @@ const SignUpScreen = () => {
   };
 
   return (
-    <div className="signUpScreen">
+    <div className="signInScreen">
       <form>
         <h1>Đăng ký thành viên</h1>
         <input ref={emailRef} placeholder="Email" type="email"></input>

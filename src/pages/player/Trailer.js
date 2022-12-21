@@ -1,7 +1,7 @@
-import React from "react";
-import "./Player.css";
-import Nav from "../../components/Nav/Nav";
-import TrailerControl from "../../components/Movie/TrailerControl";
+import React from 'react';
+import './Player.css';
+import Nav from '../components/Header/Nav';
+import TrailerControl from './TrailerControl';
 
 const Trailer = () => {
   return (
