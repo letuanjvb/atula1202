@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,7 +9,7 @@
   padding: 20px;
   width: 100%;
   height: 120px;
-  z-index: 1;
+  z-index: 100;
   transition-timing-function: ease-in;
   transition: all 0.3s;
   opacity: 0.9;
@@ -25,18 +25,16 @@
 }
 
 .nav_logo {
-  position: fixed;
   left: 0;
   width: 100px;
   object-fit: contain;
   padding: 5px;
-  z-index: 2;
+  z-index: 100;
   background-color: red;
 }
 .nav_logo:hover {
   cursor: pointer;
 }
-
 
 .nav_avatar {
   position: fixed;
@@ -46,7 +44,7 @@
   cursor: pointer;
 }
 
-.nav_links ul{
+.nav_links ul {
   position: fixed;
   left: 0;
   padding-left: 180px;
@@ -56,43 +54,43 @@
   gap: 24px;
   font-weight: 600;
 }
-.nav_links li{
+.nav_links li {
   color: red;
   text-decoration: none;
   cursor: pointer;
 }
-.nav_links li:hover{
+.nav_links li:hover {
   color: white;
   text-decoration: none;
   transition: 0.5s;
 }
 
-.nav_users{
+.nav_users {
   position: fixed;
   right: 10px;
   cursor: pointer;
   color: red;
 }
-.nav_icons{
+.nav_icons {
   position: fixed;
   font-size: 24px;
   right: 10px;
   margin-top: 10px;
 }
-.nav_users ul{
+.nav_users ul {
   list-style: none;
   margin-top: 50px;
   position: fixed;
   right: 10px;
 }
-.nav_users li:hover{
+.nav_users li:hover {
   color: white;
   text-decoration: none;
   transition: 0.5s;
 }
 
 @media only screen and (max-width: 860px) {
-  .nav_links{
+  .nav_links {
     visibility: hidden;
   }
 }

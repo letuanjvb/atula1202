@@ -1,18 +1,23 @@
-import React, { useEffect } from "react";
-import "./styles/App.css";
-import HomeScreen from "./pages/Home/HomeScreen";
+import React, { useEffect } from 'react';
+import './styles/App.css';
+import HomeScreen from './pages/Home/HomeScreen';
 // eslint-disable-next-line no-unused-vars
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import LoginSreen from "./pages/loginPage/LoginSreen";
-import { auth } from "./Library/firebase";
-import { useDispatch, useSelector } from "react-redux";
-import { login, logout, selectUser } from "./features/userSlice";
-import ProfileScreen from "./pages/profile/ProfileScreen";
-import Player from "./pages/player/Player";
-import Trailer from "./pages/player/Trailer";
-import FilmInfo from "./components/Movie/FilmInfo";
-import SignUpScreen from "./components/LoginForm/SignUpScreen";
-import UserSetting from "./pages/profile/ProfileSetting";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LoginSreen from './pages/loginPage/LoginSreen';
+import { auth } from './config/firebase';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout, selectUser } from './features/userSlice';
+import ProfileScreen from './pages/profile/ProfileScreen';
+
+import UserSetting from './pages/profile/ProfileSetting';
+import DetailsMovie from './pages/Details/Details';
+import Search from './pages/Search/Search';
+import SearchResults from './pages/Search/SearchResults';
+import WatchTv from './pages/Watch/Watch';
+import WatchMovie from './pages/Watch/WatchMovie';
+import Player from './components/TV/Player';
+
+import ViewMorePage from './pages/ViewMore/ViewMorePage';
 
 function App() {
   // đăng nhập r sẽ load về trang chủ
@@ -27,7 +32,7 @@ function App() {
         dispatch(
           login({
             uid: userAuth.uid,
-            email: userAuth.email,
+            email: userAuth.email
           })
         );
       } else {
@@ -48,11 +53,15 @@ function App() {
         <Routes>
           <Route path="/profile" element={<ProfileScreen />}></Route>
           <Route path="/" element={<HomeScreen />}></Route>
-          <Route path="/player" element={<Player />}></Route>
-          <Route path="/trailer" element={<Trailer />}></Route>
-          <Route path="/filminfo" element={<FilmInfo />}></Route>
-          <Route path="/signup" element={<SignUpScreen />}></Route>
+          <Route path="/watch/movie/:id" element={<WatchMovie />}></Route>
           <Route path="/usersetting" element={<UserSetting />}></Route>
+          <Route path="/search" element={<Search />}></Route>
+          <Route path="/results" element={<SearchResults />}></Route>
+          <Route path="/:media_type/:type" element={<ViewMorePage />}></Route>
+          <Route path="/details/:media_type/:id" element={<DetailsMovie />}></Route>
+          <Route path="/watch/tv/:id/season/:season/esp/:esp" element={<WatchTv />}></Route>
+          <Route path="/watch/movie/:id" element={<WatchMovie />}></Route>
+          <Route path="/player" element={<Player />}></Route>
         </Routes>
       )}
     </div>
