@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { BASE_URL, API_KEY } from "../../utils/constans";
-import Simular from "../../components/Simular/Simular";
-import Title from "../../components/Shared/Title";
-import Comment from "../../components/Comments/Comment";
-import SeasonItem from "../../components/TV/SeasonItem";
-import TVInfo from "../../components/TV/TVInfo";
-import EmbedVideoTv from "../../components/TV/EmbedVideoTv";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { BASE_URL, API_KEY } from '../../utils/constans';
+import Simular from '../../components/Simular/Simular';
+import Title from '../../components/Shared/Title';
+import Comment from '../../components/Comments/Comment';
+import SeasonItem from '../../components/TV/SeasonItem';
+import TVInfo from '../../components/TV/TVInfo';
+import EmbedVideoTv from '../../components/TV/EmbedVideoTv';
 
 function Watch() {
   const { esp, season, id } = useParams();
@@ -41,9 +41,7 @@ function Watch() {
 
   useEffect(() => {
     const getEspCurrent = (id, season, esp) => {
-      fetch(
-        `${BASE_URL}/tv/${id}/season/${season}/episode/${esp}?api_key=${API_KEY}`
-      )
+      fetch(`${BASE_URL}/tv/${id}/season/${season}/episode/${esp}?api_key=${API_KEY}`)
         .then((res) => res.json())
         .then((data) => {
           setEspCurrent(data);
@@ -58,9 +56,7 @@ function Watch() {
 
   return (
     <div className="container">
-      <Title
-        title={`${nameTv} | Season ${season} | Episode ${esp} | Phim Moi`}
-      />
+      <Title title={`${nameTv} | Season ${season} | Episode ${esp} | Phim Moi`} />
 
       <div className="watch-tv-container">
         <div className="watch-wrap">

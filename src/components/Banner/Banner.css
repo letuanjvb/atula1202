@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,9 +8,10 @@
   position: relative;
   color: white;
   object-fit: contain;
+  width: 100%;
 }
 
-.banner_contents{
+.banner_contents {
   position: absolute;
   margin-top: -500px;
   margin-left: 30px;
@@ -42,20 +43,21 @@
     #111
   );
 } */
-.banner_buttons{
+.banner_buttons {
   display: flex;
   margin: 10px 10px 30px 10px;
 }
-.banner_button_right{
+.banner_button_right {
   display: flex;
   gap: 0.5rem;
 }
-.banner_button_right1{
+.banner_button_right1 {
   color: white;
   background-color: rgba(51, 51, 51, 0.5);
   font-size: 2rem;
   padding: 5px;
-}.banner_button_right1:hover{
+}
+.banner_button_right1:hover {
   cursor: pointer;
   color: #000;
   background-color: #e6e6e6;
@@ -101,9 +103,10 @@
   transition: all 0.2s;
 }
 
-.banner video{
+.banner video {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
 }
 
@@ -115,24 +118,24 @@
   opacity: 0.5;
 } */
 
-.banner_button_hover{
+.banner_button_hover {
   width: 400px;
   height: 400px;
   margin-top: -25%;
   margin-left: 100%;
   position: absolute;
-  background-image: url("../../images/banner.jpg");
+  background-image: url('../../images/banner.jpg');
   background-size: cover;
   border-radius: 10px;
   border: 5px solid white;
   opacity: 1.5;
 }
 
-.banner_button_hover div{
+.banner_button_hover div {
   padding: 10px;
   color: white;
 }
-.banner_button_hover h1{
+.banner_button_hover h1 {
   padding: 10px;
   color: white;
 }

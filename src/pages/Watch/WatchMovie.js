@@ -7,6 +7,7 @@ import Comment from '../../components/Comments/Comment';
 import EmbedVideoMovie from '../../components/Movie/EmbedVideoMovie';
 import MovieInfo from '../../components/Movie/MovieInfo';
 import './Watch.css';
+import Player from '../../components/TV/Player';
 
 function WatchMovie() {
   const params = useParams();
@@ -31,8 +32,10 @@ function WatchMovie() {
 
       <div className="watch-movie-container">
         <div className="watch-wrap">
-          <EmbedVideoMovie id={id} />
+          {/* <EmbedVideoMovie id={id} /> */}
+          <Player />
           <MovieInfo info={info} />
+
           <Comment movieId={id} />
         </div>
         <div className="simularMovie">
