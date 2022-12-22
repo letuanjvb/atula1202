@@ -1,12 +1,13 @@
-import React from "react";
-import "./ProfileScreen.css";
-import { useSelector } from "react-redux";
-import Nav from "../../components/Nav/Nav";
-import { selectUser } from "../../features/userSlice";
+import React from 'react';
+import './ProfileScreen.css';
+import { useSelector } from 'react-redux';
+import Nav from '../../components/Nav/Nav';
+import { selectUser } from '../../features/userSlice';
 // import { auth } from '../Library/firebase';
+import { useStore } from '../../stored';
 
 const ProfileScreen = () => {
-  const user = useSelector(selectUser);
+  const { setLoading, loading } = useStore((state) => state);
 
   return (
     <div className="profileScreen">
@@ -16,10 +17,9 @@ const ProfileScreen = () => {
         <div className="profileScreen_info">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-            alt=""
-          ></img>
+            alt=""></img>
           <div className="profileScreen_details">
-            <h2>{user.email}</h2>
+            {/* <h2>{user.email}</h2> */}
             <div className="profileScreen_plans">
               <h3>Gói hội viên</h3> <p>Thường</p>
             </div>

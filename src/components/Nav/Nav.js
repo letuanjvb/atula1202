@@ -10,7 +10,7 @@ const Nav = () => {
   const [show, handleShow] = useState(false);
   const history = useNavigate();
   // icons click show list
-  const [userList, setShow] = useState(false);
+  const [userList, setShow] = useState(false) ;
 
   const transitionNavbar = () => {
     if (window.scrollY > 100) {

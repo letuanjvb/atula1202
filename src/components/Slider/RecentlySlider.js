@@ -28,7 +28,7 @@ const RecentlySlider = ({ data }) => {
   return (
     <div className="slider">
       <div className="title">
-        <h1>Recently viewed</h1>
+        <h1>Đã xem gần đây</h1>
       </div>
       <Swiper
         navigation

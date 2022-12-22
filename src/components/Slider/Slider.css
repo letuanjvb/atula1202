@@ -3,20 +3,20 @@
 }
 
 .slider {
-  margin: 40px 0;
+  margin: 2.5rem 0;
 }
 
 .title {
   display: flex;
   justify-content: space-between;
-  color: #fff;
+  color: white;
   align-items: center;
   margin: 20px 0;
 }
 
 .title h1 {
   font-weight: 400;
-  color: #fff;
+  color: white;
   font-size: 20px;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .movie-item:hover .movie-title {
-  color: #e74c3c;
+  color: red;
 }
 
 .movie-title {

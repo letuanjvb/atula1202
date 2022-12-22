@@ -1,11 +1,6 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 .profileScreen {
   margin-top: 120px;
-  height: 100vh;
+  height: auto;
   color: white;
   background-color: black;
 }

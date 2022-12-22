@@ -38,7 +38,9 @@ const Banner = () => {
         <h1 className="banner_title"> Avengers - Endgame </h1>
         <div className="banner_buttons">
           <div className="banner_button_left">
-            <button className="banner_button">Trailer</button>
+            <Link className="banner_button" to={`/player`}>
+              Trailer
+            </Link>
             <Link className="banner_button" to={`/player`}>
               Xem phim
             </Link>
@@ -67,6 +69,7 @@ const Banner = () => {
             <ImLoop2 className="banner_button_right1" />
             <GoMute className="banner_button_right1" />
           </div>
+          <div className="banner_gradient" />
         </div>
         <h1 className="banner_description">
           Cú búng tay của Thanos đã khiến toàn bộ dân số biến mất một nửa. Các siêu anh hùng đánh
