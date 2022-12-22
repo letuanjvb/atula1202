@@ -16,6 +16,7 @@ import SearchResults from './pages/Search/SearchResults';
 import WatchTv from './pages/Watch/Watch';
 import WatchMovie from './pages/Watch/WatchMovie';
 import Player from './components/TV/Player';
+import Navside from './components/Nav/Navside';
 
 import ViewMorePage from './pages/ViewMore/ViewMorePage';
 
@@ -62,6 +63,7 @@ function App() {
           <Route path="/watch/tv/:id/season/:season/esp/:esp" element={<WatchTv />}></Route>
           <Route path="/watch/movie/:id" element={<WatchMovie />}></Route>
           <Route path="/player" element={<Player />}></Route>
+          <Route path="/navside" element={<Navside />}></Route>
         </Routes>
       )}
     </div>

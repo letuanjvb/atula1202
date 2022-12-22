@@ -64,7 +64,7 @@ const SignInScreen = () => {
           onClick={() => handleLogin(googleProvider)}
           disabled={loading}>
           <box-icon name="google" type="logo" flip="vertical" color="#f7eeee"></box-icon>
-          <span>Login with Google</span>
+          <span>Đăng nhập bằng Google</span>
         </button>
       </form>
     </div>

@@ -10,7 +10,7 @@ const Nav = () => {
   const [show, handleShow] = useState(false);
   const history = useNavigate();
   // icons click show list
-  const [userList, setShow] = useState(false);
+  const [userList, setShow] = useState(false) ;
 
   const transitionNavbar = () => {
     if (window.scrollY > 100) {
@@ -30,7 +30,7 @@ const Nav = () => {
     <div className={`nav ${show && 'nav_black'}`}>
       <div className="nav_links">
         <ul>
-          <li onClick={() => history('/')}>Phim lẻ</li>
+          <li onClick={() => history('/navtest')}>Phim lẻ</li>
           <li onClick={() => history('/')}>Phim bộ</li>
           <li onClick={() => history('/')}>Mới và phổ biến</li>
           <li onClick={() => history('/')}>Danh sách của tôi</li>

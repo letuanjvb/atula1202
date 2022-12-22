@@ -1,19 +1,15 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 .profileScreen {
-  margin-top: 120px;
-  height: 100vh;
+  margin-top: 3rem;
+  height: auto;
   color: white;
   background-color: black;
 }
-
+.bodyside{
+  margin-left: 4%;
+}
 .profileScreen_body {
   display: flex;
   width: 70%;
-  padding-top: 10%;
   max-width: 800px;
 }
 .profileScreen_body label {

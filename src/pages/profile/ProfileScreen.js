@@ -1,8 +1,9 @@
 import React from "react";
 import "./ProfileScreen.css";
 import { useSelector } from "react-redux";
-import Nav from "../../components/Nav/Nav";
+import Navside from "../../components/Nav/Navside";
 import { selectUser } from "../../features/userSlice";
+import Footer from '../../components/Footer/Footer';
 // import { auth } from '../Library/firebase';
 
 const ProfileScreen = () => {
@@ -10,7 +11,8 @@ const ProfileScreen = () => {
 
   return (
     <div className="profileScreen">
-      <Nav />
+      <Navside />
+      <div className="bodyside">
       <div className="profileScreen_body">
         <h1>Hồ sơ cá nhân </h1>
         <div className="profileScreen_info">
@@ -25,6 +27,8 @@ const ProfileScreen = () => {
             </div>
           </div>
         </div>
+      </div>
+      <Footer />
       </div>
     </div>
   );
