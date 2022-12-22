@@ -59,7 +59,7 @@ const SliderMovie = ({ type }) => {
   return (
     <div className="slider">
       <div className="title">
-        <h1>Phim {type}</h1>
+        <h1>Film {type}</h1>
         <Link to={`/movie/${type}`}>
           <Button content={"Xem thêm"} />
         </Link>

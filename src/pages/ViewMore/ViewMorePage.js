@@ -108,7 +108,7 @@ function ViewMorePage() {
             </div>
           ) : page < totalPage ? (
             <div onClick={LoadMore} className="load-more">
-              <button className="load-more-button">Load More</button>
+              <button className="load-more-button">Xem thêm</button>
             </div>
           ) : null}
         </div>
