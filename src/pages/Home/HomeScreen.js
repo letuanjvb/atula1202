@@ -11,7 +11,7 @@ const HomeScreen = () => {
     <div className="homeScreen">
       {/* Nav */}
       <Navside />
-      <div className='bodyside'>
+      <div className="bodyside">
         {/* Banner */}
         <Banner />
 

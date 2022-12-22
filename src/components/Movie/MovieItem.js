@@ -23,13 +23,18 @@ function MovieItem({ data }) {
           alt={data.title ? data.title : data.name}
         />
         {isShown && (
-        <div className="movie-item-hover">
-          <div>Phim: {data.title ? data.title : data.name}</div>
-          <div>Rating: <yellow>{data.vote_average}/10</yellow> ({data.vote_count}vote)</div>
-          <div>Ngày phát hành: {data.release_date}</div>
-          <div><label>Giới thiệu: </label><p>{data.overview}</p></div>
-          <div>{data.adult}</div>
-        </div>
+          <div className="movie-item-hover">
+            <div>Phim: {data.title ? data.title : data.name}</div>
+            <div>
+              Rating: <yellow>{data.vote_average}/10</yellow> ({data.vote_count}vote)
+            </div>
+            <div>Ngày phát hành: {data.release_date}</div>
+            <div>
+              <label>Giới thiệu: </label>
+              <p>{data.overview}</p>
+            </div>
+            <div>{data.adult}</div>
+          </div>
         )}
         <p className="line-clamp-1 movie-item-title">{data?.title || data?.name}</p>
       </div>

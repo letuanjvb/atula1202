@@ -1,15 +1,13 @@
 import React, { useRef } from 'react';
-import { signInWithPopup } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import '../LoginForm/SignInScreen.css';
 import { Auth } from '../../config/firebase';
 import { auth, googleProvider } from '../../config/firebase';
 import { addUser } from '../../actions/fireStoreActions';
 // import { toast } from 'react-toastify';
 import { useStore } from '../../stored';
-import { useNavigate } from 'react-router-dom';
 
 const SignInScreen = () => {
-  const history = useNavigate();
   //Chưa học useRef
   const { setLoading, loading } = useStore((state) => state);
   const emailRef = useRef(null);
@@ -26,6 +24,38 @@ const SignInScreen = () => {
         alert(error.message);
       });
   };
+  // const register = (e) => {
+  //   // chặn hoạt động mặc định của trình duyệt
+  //   e.preventDefault();
+  //   // xác thực khi đăng ký
+
+  //   Auth.createUserWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
+  //     .then((authUser) => {
+  //       console.log(authUser);
+  //     })
+  //     .catch((error) => {
+  //       alert(error.message);
+  //     });
+  // };
+
+  async function register(e) {
+    e.preventDefault();
+    try {
+      const { _tokenResponse, user } = await createUserWithEmailAndPassword(
+        auth,
+        emailRef.current.value,
+        passwordRef.current.value
+      );
+      const { displayName = emailRef.current.value, email, photoURL, uid } = user;
+      if (_tokenResponse.isNewUser) {
+        await addUser({ displayName, email, photoURL, uid });
+      }
+    } catch (error) {
+      alert(error.message);
+      // toast.error(error.message);
+      setLoading(false);
+    }
+  }
 
   const handleLogin = async (Provider) => {
     setLoading(true);
@@ -54,7 +84,7 @@ const SignInScreen = () => {
 
         <h5>
           <span className="signInScreen_gray">Bạn mới tham gia Netflix? </span>
-          <span className="signupScreen_link" onClick={() => history('/signup')}>
+          <span className="signupScreen_link" onClick={register}>
             Đăng ký ngay.
           </span>
         </h5>

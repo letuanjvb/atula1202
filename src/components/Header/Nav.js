@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Header/Nav.css';
 import { AiFillCaretDown } from 'react-icons/ai';
-import { auth } from '../../Library/firebase';
+import { Auth } from '../../config/firebase';
 import logo from '../../images/logo.png';
-import avatar from '../../images/avatar.jpg';
+
+import { useStore } from '../../stored';
 
 const Nav = () => {
+  const user = useStore((state) => state.user);
   const [show, handleShow] = useState(false);
   const history = useNavigate();
   // icons click show list
@@ -45,7 +47,10 @@ const Nav = () => {
           alt=""
           title="FlimMitu.xyz"></img>
 
-        <img className="nav_avatar" src={avatar} alt=""></img>
+        <img
+          className="nav_avatar"
+          src={user.photoURL ? user?.photoURL : '/user-non-avatar.png'}
+          alt=""></img>
         {/* icons click show div */}
         <div className="nav_users">
           {userList && (
@@ -53,7 +58,7 @@ const Nav = () => {
               <li onClick={() => history('/profile')}>Hồ sơ cá nhân</li>
               <li onClick={() => history('/usersetting')}>Quản lí tài khoản</li>
               <li onClick={() => history('/profile')}>Trung tâm hỗ trợ</li>
-              <li onClick={() => auth.signOut()} className="profileScreen_signOut">
+              <li onClick={() => Auth.signOut()} className="profileScreen_signOut">
                 Đăng xuất
               </li>
             </ul>

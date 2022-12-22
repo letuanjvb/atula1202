@@ -1,18 +1,19 @@
 import React from 'react';
 import './ProfileSetting.css';
-import { useSelector } from 'react-redux';
+
 import Navside from '../../components/Nav/Navside';
 import Footer from '../../components/Footer/Footer';
-import { selectUser } from '../../features/userSlice';
+import { useStore } from '../../stored';
+
 // import { auth } from '../Library/firebase';
 
 const UserSetting = () => {
-  const user = useSelector(selectUser);
-
+  const { setLoading, loading } = useStore((state) => state);
+  const user = useStore((state) => state);
   return (
     <div className="profileScreen">
       <Navside />
-      <div className='bodyside'>
+      <div className="bodyside">
         <div className="profileScreen_body">
           <p>
             <label>Quản lí tài khoản</label> thành viên từ tháng 12/2022
