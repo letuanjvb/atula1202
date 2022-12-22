@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import plyr from 'plyr';
 import 'plyr/dist/plyr.css';
-// import video1 from '../../videos/Avengers-filmdemo.webm';
-// import video2 from '../../videos/Avengers-filmdemo.webm';
 
 // import video1 from '../../videos/Video1.mp4';
 // import video2 from '../../videos/Video2.mp4'

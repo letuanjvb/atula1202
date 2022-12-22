@@ -1,17 +1,17 @@
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation } from "swiper";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation } from 'swiper';
 
-import "swiper/swiper-bundle.min.css";
-import "swiper/swiper.min.css";
-import { useEffect, useState } from "react";
-import Button from "../Button/Button";
-import useInnerWidth from "../../hook/useInnerWidth";
-import Skeleton from "../Skeleton/Skeleton";
-import "./Slider.css";
-import { API_KEY, BASE_URL } from "../../utils/constans";
-import { Link } from "react-router-dom";
-import MovieItem from "../Movie/MovieItem";
+import 'swiper/swiper-bundle.min.css';
+import 'swiper/swiper.min.css';
+import { useEffect, useState } from 'react';
+import Button from '../Button/Button';
+import useInnerWidth from '../../hook/useInnerWidth';
+import Skeleton from '../Skeleton/Skeleton';
+import './Slider.css';
+import { API_KEY, BASE_URL } from '../../utils/constans';
+import { Link } from 'react-router-dom';
+import MovieItem from '../Movie/MovieItem';
 
 const SliderMovie = ({ type }) => {
   SwiperCore.use([Navigation]);
@@ -37,7 +37,7 @@ const SliderMovie = ({ type }) => {
   useEffect(() => {
     const getMovie = () => {
       fetch(
-        type === "trending"
+        type === 'trending'
           ? `${BASE_URL}/trending/movie/week?api_key=${API_KEY}`
           : `${BASE_URL}/movie/${type}?api_key=${API_KEY}`
       )
@@ -59,17 +59,12 @@ const SliderMovie = ({ type }) => {
   return (
     <div className="slider">
       <div className="title">
-        <h1>Phim {type}</h1>
+        <h1>Film {type}</h1>
         <Link to={`/movie/${type}`}>
-          <Button content={"Xem thêm"} />
+          <Button content={'Xem thêm'} />
         </Link>
       </div>
-      <Swiper
-        navigation
-        grabCursor={true}
-        spaceBetween={20}
-        slidesPerView={item}
-      >
+      <Swiper navigation grabCursor={true} spaceBetween={20} slidesPerView={item}>
         {!loading ? (
           movie.map((item) => (
             <SwiperSlide key={item.id}>

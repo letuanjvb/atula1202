@@ -1,11 +1,12 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { API_KEY, BASE_URL } from "../../utils/constans";
-import MovieItem from "../../components/Movie/MovieItem";
-import Skeleton from "../../components/Skeleton/Skeleton";
-import Title from "../../components/Shared/Title";
-import "./ViewMorePage.css";
-import "boxicons";
+import React, { useCallback, useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { API_KEY, BASE_URL } from '../../utils/constans';
+import MovieItem from '../../components/Movie/MovieItem';
+import Skeleton from '../../components/Skeleton/Skeleton';
+import Title from '../../components/Shared/Title';
+import './ViewMorePage.css';
+import 'boxicons';
+import Navside from '../../components/Nav/Navside';
 
 function ViewMorePage() {
   const { media_type, type } = useParams();
@@ -18,7 +19,7 @@ function ViewMorePage() {
   const scrollTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth'
     });
   };
 
@@ -28,8 +29,8 @@ function ViewMorePage() {
 
   const getViewMore = useCallback(
     (media_type, type) => {
-      let apiViewMore = "";
-      if (type === "trending") {
+      let apiViewMore = '';
+      if (type === 'trending') {
         apiViewMore = `${BASE_URL}/${type}/${media_type}/week?api_key=${API_KEY}&page=${page}`;
       } else {
         apiViewMore = `${BASE_URL}/${media_type}/${type}?api_key=${API_KEY}&page=${page}`;
@@ -58,60 +59,63 @@ function ViewMorePage() {
   }, [page, getViewMore, media_type, type]);
 
   return (
-    <div className="container">
+    <div className="viewmore-container">
+      <Navside />
       {/* Change document title */}
-      <Title title={`${media_type.toUpperCase()} | ${type.toUpperCase()}`} />
+      <div className="viewmore-bodyside">
+        <Title title={`${media_type.toUpperCase()} | ${type.toUpperCase()}`} />
 
-      <div className="view_more">
-        <h1 className="view_more-title">
-          {media_type} {type}
-        </h1>
+        <div className="view_more">
+          <h1 className="view_more-title">
+            {media_type} {type}
+          </h1>
 
-        <div className="grid-layout grid-gap-20px-20px">
-          {!loading ? (
-            movie.map((item) => (
-              <Link key={item.id} to={`/details/${media_type}/${item.id}`}>
-                <MovieItem data={item} />
-              </Link>
-            ))
-          ) : (
-            <>
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-            </>
-          )}
+          <div className="grid-layout grid-gap-20px-20px">
+            {!loading ? (
+              movie.map((item) => (
+                <Link key={item.id} to={`/details/${media_type}/${item.id}`}>
+                  <MovieItem data={item} />
+                </Link>
+              ))
+            ) : (
+              <>
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+              </>
+            )}
+          </div>
+          {loading ? (
+            <div className="loading-container">
+              <div className="loader"></div>
+            </div>
+          ) : page < totalPage ? (
+            <div onClick={LoadMore} className="load-more">
+              <button className="load-more-button">Xem thêm</button>
+            </div>
+          ) : null}
         </div>
-        {loading ? (
-          <div className="loading-container">
-            <div className="loader"></div>
-          </div>
-        ) : page < totalPage ? (
-          <div onClick={LoadMore} className="load-more">
-            <button className="load-more-button">Load More</button>
-          </div>
-        ) : null}
-      </div>
 
-      <div className="scrollTop" onClick={scrollTop}>
-        <box-icon size="sm" color="white" type="solid" name="to-top"></box-icon>
+        <div className="scrollTop" onClick={scrollTop}>
+          <box-icon size="sm" color="white" type="solid" name="to-top"></box-icon>
+        </div>
       </div>
     </div>
   );

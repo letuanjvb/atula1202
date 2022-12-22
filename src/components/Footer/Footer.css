@@ -1,18 +1,8 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .site-footer{
     border-top: 8px solid #222;
     background-color: black;
     color: red;
+    padding-left: 3rem;
 }
 
 .footer-top{

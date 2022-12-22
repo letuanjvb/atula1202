@@ -1,4 +1,4 @@
-.container{
+.container {
   width: 90%;
 }
 .movie-item {
@@ -8,7 +8,7 @@
 }
 
 .movie-item img {
-height: 80%;
+  height: 80%;
 }
 
 .movie-item:hover {
@@ -21,7 +21,7 @@ height: 80%;
   margin-top: 10px;
 }
 
-.movie-item-hover{
+.movie-item-hover {
   padding: 3rem 1rem;
   font-size: 0.8rem;
   position: absolute;
@@ -36,10 +36,12 @@ height: 80%;
     rgba(0, 0, 0, 1) 100%
   );
 }
-.movie-item-hover div{
+.movie-item-hover div {
   margin: 1rem auto;
 }
-.movie-item-hover p{
+.movie-item-hover p {
   font-size: 0.6rem;
 }
-
+.movie-item-hover yellow {
+  color: yellow;
+}

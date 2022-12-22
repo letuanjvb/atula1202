@@ -2,15 +2,14 @@
   height: 100vh;
   color: white;
 }
-
 .profileScreen_body {
   display: flex;
   flex-direction: column;
   width: 50%;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 8%;
   max-width: 800px;
+  padding-bottom: 8%;
 }
 
 .profileScreen_info {
