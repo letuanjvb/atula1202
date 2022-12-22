@@ -1,8 +1,6 @@
 import React from 'react';
 import './ProfileScreen.css';
-import { useSelector } from 'react-redux';
 import Navside from '../../components/Nav/Navside';
-import { selectUser } from '../../features/userSlice';
 import Footer from '../../components/Footer/Footer';
 // import { auth } from '../Library/firebase';
 import { useStore } from '../../stored';

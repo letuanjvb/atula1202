@@ -8,7 +8,7 @@ import { useStore } from '../../stored';
 // import { auth } from '../Library/firebase';
 
 const UserSetting = () => {
-  const { setLoading, loading } = useStore((state) => state);
+  // const { setLoading, loading } = useStore((state) => state);
   const user = useStore((state) => state);
   return (
     <div className="profileScreen">
