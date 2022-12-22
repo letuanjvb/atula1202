@@ -15,70 +15,77 @@ const Navside = () => {
   const history = useNavigate();
 
   return (
-    <div className='body'>
+    <div className="body">
       <nav className="navbar">
         <ul className="navbar-nav">
           <li className="logo">
             <div className="nav-link">
-              <span className="link-text logo-text" onClick={() => history('/')}>FlimMitu</span>
-              <img src={logo} alt='' onClick={() => history('/')} />
+              <span className="link-text logo-text" onClick={() => history('/')}>
+                FlimMitu
+              </span>
+              <img src={logo} alt="" onClick={() => history('/')} />
             </div>
           </li>
 
           <li className="nav-item">
             <div className="nav-link">
-              <AiOutlineSearch className='nav-link-icon'/>
+              <AiOutlineSearch className="nav-link-icon" />
               <span className="link-text">Tìm kiếm</span>
             </div>
           </li>
 
           <li className="nav-item">
             <div className="nav-link">
-              <MdOutlineMovieFilter className='nav-link-icon'/>
+              <MdOutlineMovieFilter className="nav-link-icon" />
               <span className="link-text">Phim lẻ</span>
             </div>
           </li>
 
           <li className="nav-item">
             <div className="nav-link">
-              <RiMovie2Line className='nav-link-icon'/>
+              <RiMovie2Line className="nav-link-icon" />
               <span className="link-text">TV series</span>
             </div>
           </li>
 
           <li className="nav-item">
             <div className="nav-link">
-              <AiOutlineFire className='nav-link-icon' />
+              <AiOutlineFire className="nav-link-icon" />
               <span className="link-text">Mới và nổi bật</span>
             </div>
           </li>
 
           <li className="nav-item">
             <div className="nav-link">
-              <AiOutlineHeart className='nav-link-icon' />
+              <AiOutlineHeart className="nav-link-icon" />
               <span className="link-text">Danh mục yêu thích</span>
             </div>
           </li>
 
           <li className="nav-item">
             <div className="nav-link">
-              <BsPeople className='nav-link-icon' onClick={() => history('/profile')}/>
-              <span className="link-text" onClick={() => history('/profile')}>Hồ sơ của tôi</span>
+              <BsPeople className="nav-link-icon" onClick={() => history('/profile')} />
+              <span className="link-text" onClick={() => history('/profile')}>
+                Hồ sơ của tôi
+              </span>
             </div>
           </li>
           <li className="nav-item">
             <div className="nav-link">
-              <CgProfile className='nav-link-icon' onClick={() => history('/usersetting')}/>
-              <span className="link-text" onClick={() => history('/usersetting')}>Quản lí hồ sơ</span>
+              <CgProfile className="nav-link-icon" onClick={() => history('/usersetting')} />
+              <span className="link-text" onClick={() => history('/usersetting')}>
+                Quản lí hồ sơ
+              </span>
             </div>
           </li>
 
           <li className="nav-item">
             <div className="nav-link">
-              <span className="link-text" onClick={() => auth.signOut()} className="profileScreen_signOut">Đăng xuất</span>
+              <span className="link-text profileScreen_signOut" onClick={() => auth.signOut()}>
+                Đăng xuất
+              </span>
             </div>
           </li>
-
         </ul>
       </nav>
     </div>
