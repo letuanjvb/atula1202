@@ -2,8 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import plyr from 'plyr';
 import 'plyr/dist/plyr.css';
-import video1 from '../../videos/Avengers-filmdemo.webm';
-import video2 from '../../videos/Avengers-filmdemo.webm';
+// import video1 from '../../videos/Avengers-filmdemo.webm';
+// import video2 from '../../videos/Avengers-filmdemo.webm';
+
+// import video1 from '../../videos/Video1.mp4';
+// import video2 from '../../videos/Video2.mp4'
 import './Player.css';
 
 class Player extends React.Component {
@@ -71,13 +74,14 @@ Player.defaultProps = {
     type: 'video',
     sources: [
       {
-        // src: "https://cdn.glitch.me/cbf2cfb4-aa52-4a1f-a73c-461eef3d38e8/1080.mp4",
-        src: video2,
+        src: 'https://cdn.glitch.me/cbf2cfb4-aa52-4a1f-a73c-461eef3d38e8/1080.mp4',
+        // src: video2,
         type: 'video/mp4',
         size: 720
       },
       {
-        src: video1,
+        src: 'https://cdn.glitch.me/cbf2cfb4-aa52-4a1f-a73c-461eef3d38e8/1080.mp4',
+        // src: video1,
         type: 'video/mp4',
         size: 360
       }
