@@ -6,10 +6,8 @@ import { auth, googleProvider } from '../../config/firebase';
 import { addUser } from '../../actions/fireStoreActions';
 // import { toast } from 'react-toastify';
 import { useStore } from '../../stored';
-import { useNavigate } from 'react-router-dom';
 
 const SignInScreen = () => {
-  const history = useNavigate();
   //Chưa học useRef
   const { setLoading, loading } = useStore((state) => state);
   const emailRef = useRef(null);
@@ -48,11 +46,12 @@ const SignInScreen = () => {
         emailRef.current.value,
         passwordRef.current.value
       );
-      const { displayName, email, photoURL, uid } = user;
+      const { displayName = emailRef.current.value, email, photoURL, uid } = user;
       if (_tokenResponse.isNewUser) {
         await addUser({ displayName, email, photoURL, uid });
       }
     } catch (error) {
+      alert(error.message);
       // toast.error(error.message);
       setLoading(false);
     }

@@ -1,13 +1,14 @@
-import React from "react";
-import "./ProfileSetting.css";
-import { useSelector } from "react-redux";
-import Nav from "../../components/Nav/Nav";
-import Footer from "../../components/Footer/Footer";
-import { selectUser } from "../../features/userSlice";
+import React from 'react';
+import './ProfileSetting.css';
+
+import Nav from '../../components/Header/Nav';
+import Footer from '../../components/Footer/Footer';
+import { useStore } from '../../stored';
+
 // import { auth } from '../Library/firebase';
 
 const ProfileScreen = () => {
-  const user = useSelector(selectUser);
+  const user = useStore((state) => state.user);
 
   return (
     <div className="profileScreen">
@@ -22,13 +23,9 @@ const ProfileScreen = () => {
             <button>Hủy tư cách thành viên</button>
           </div>
           <div className="profileScreen_content">
-            <div className="profileScreen_content1">
-              Tên đăng nhập: {user.email}
-            </div>
+            <div className="profileScreen_content1">Tên đăng nhập: {user.email}</div>
             <div className="profileScreen_content1">Mật khẩu: ********</div>
-            <div className="profileScreen_content1">
-              Không có thông tin thanh toán
-            </div>
+            <div className="profileScreen_content1">Không có thông tin thanh toán</div>
           </div>
           <div className="profileScreen_footer">
             <div className="profileScreen_content1">Thay đổi email</div>
@@ -51,20 +48,14 @@ const ProfileScreen = () => {
           </div>
           <div className="profileScreen_content">
             <div className="">
-              Kiểm soát quyền truy cập vào tài khoản này, xem các thiết bị hoạt
-              động gần đây nhất và hơn thế nữa
+              Kiểm soát quyền truy cập vào tài khoản này, xem các thiết bị hoạt động gần đây nhất và
+              hơn thế nữa
             </div>
           </div>
           <div className="profileScreen_footer">
-            <div className="profileScreen_footer3">
-              Quản lí quyền truy cập và thiết bị
-            </div>
-            <div className="profileScreen_footer3">
-              Đăng xuất khỏi tất cả thiết bị
-            </div>
-            <div className="profileScreen_footer3">
-              Tải xuống thông tin cá nhân
-            </div>
+            <div className="profileScreen_footer3">Quản lí quyền truy cập và thiết bị</div>
+            <div className="profileScreen_footer3">Đăng xuất khỏi tất cả thiết bị</div>
+            <div className="profileScreen_footer3">Tải xuống thông tin cá nhân</div>
           </div>
         </div>
       </div>
