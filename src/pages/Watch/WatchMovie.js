@@ -7,7 +7,7 @@ import Comment from '../../components/Comments/Comment';
 import EmbedVideoMovie from '../../components/Movie/EmbedVideoMovie';
 import MovieInfo from '../../components/Movie/MovieInfo';
 import './Watch.css';
-import Player from '../../components/TV/Player';
+// import Player from '../../components/TV/Player';
 
 function WatchMovie() {
   const params = useParams();
