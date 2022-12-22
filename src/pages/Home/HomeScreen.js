@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import Banner from '../../components/Banner/Banner';
 import './HomeScreen.css';
-import Nav from '../../components/Nav/Nav';
+import Nav from '../../components/Header/Nav';
 import Footer from '../../components/Footer/Footer';
 import RecentlySlider from '../../components/Slider/RecentlySlider';
 import SliderMovie from '../../components/Slider/SliderMovie';

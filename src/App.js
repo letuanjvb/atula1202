@@ -2,12 +2,21 @@ import React, { useEffect } from 'react';
 import './styles/App.css';
 import HomeScreen from './pages/Home/HomeScreen';
 // eslint-disable-next-line no-unused-vars
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import LoginSreen from './pages/loginPage/LoginSreen';
-import { auth } from './config/firebase';
+import { Auth } from './config/firebase';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
 import ProfileScreen from './pages/profile/ProfileScreen';
+import Loading from './components/Loading/Loading';
+import { onAuthStateChanged } from 'firebase/auth';
+
+import { useStore } from './stored';
+import { fetchMovieFavorite } from './actions/fireStoreActions';
+import PrivateRoute from './components/Shared/PrivateRoute';
+import FavoriteList from './pages/FavoriteList/FavoriteList';
+
+//pages
 
 import UserSetting from './pages/profile/ProfileSetting';
 import DetailsMovie from './pages/Details/Details';
@@ -21,28 +30,34 @@ import ViewMorePage from './pages/ViewMore/ViewMorePage';
 
 function App() {
   // đăng nhập r sẽ load về trang chủ
-  const user = useSelector(selectUser);
-  const dispatch = useDispatch();
+  const { setUser, user } = useStore((state) => state);
+  const location = useLocation();
 
   useEffect(() => {
     // lưu thay đổi vào bộ nhớ cục bộ của trình duyệt
-    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+    const unsubscribe = Auth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
         //log in
-        dispatch(
-          login({
-            uid: userAuth.uid,
-            email: userAuth.email
-          })
-        );
-      } else {
-        //log out: lấy dữ liệu từ redux và xóa
-        dispatch(logout());
+        setUser(userAuth);
+        return;
       }
+      setUser(null);
+      return () => {
+        unsubscribe();
+      };
     });
 
     return unsubscribe;
-  }, [dispatch]);
+  }, [setUser]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.search, location.pathname]);
+
+  if (typeof user === 'undefined') {
+    return <Loading />;
+  }
+
   return (
     <div className="App">
       {/* <HomeScreen /> */}

@@ -60,7 +60,7 @@ const SliderTv = ({ type }) => {
       <div className="title">
         <h1>TV {type}</h1>
         <Link to={`/tv/${type}`}>
-          <Button content={"View more"} />
+          <Button content={"Xem thêm"} />
         </Link>
       </div>
       <Swiper
