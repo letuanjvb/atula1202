@@ -5,16 +5,11 @@ import HomeScreen from './pages/Home/HomeScreen';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import LoginSreen from './pages/loginPage/LoginSreen';
 import { Auth } from './config/firebase';
-import { useDispatch, useSelector } from 'react-redux';
-import { login, logout, selectUser } from './features/userSlice';
+
 import ProfileScreen from './pages/profile/ProfileScreen';
 import Loading from './components/Loading/Loading';
-import { onAuthStateChanged } from 'firebase/auth';
 
 import { useStore } from './stored';
-import { fetchMovieFavorite } from './actions/fireStoreActions';
-import PrivateRoute from './components/Shared/PrivateRoute';
-import FavoriteList from './pages/FavoriteList/FavoriteList';
 
 //pages
 
