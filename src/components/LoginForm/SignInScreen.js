@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import '../LoginForm/SignInScreen.css';
 import { Auth } from '../../config/firebase';
@@ -6,12 +6,15 @@ import { auth, googleProvider } from '../../config/firebase';
 import { addUser } from '../../actions/fireStoreActions';
 // import { toast } from 'react-toastify';
 import { useStore } from '../../stored';
+import { Link } from 'react-router-dom';
+import SignUpScreen from './SignUpScreen';
 
 const SignInScreen = () => {
   //Chưa học useRef
   const { setLoading, loading } = useStore((state) => state);
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
+  const [signUp, setSignUp] = useState(false);
 
   const signIn = (e) => {
     e.preventDefault();
@@ -38,24 +41,7 @@ const SignInScreen = () => {
   //     });
   // };
 
-  async function register(e) {
-    e.preventDefault();
-    try {
-      const { _tokenResponse, user } = await createUserWithEmailAndPassword(
-        auth,
-        emailRef.current.value,
-        passwordRef.current.value
-      );
-      const { displayName = emailRef.current.value, email, photoURL, uid } = user;
-      if (_tokenResponse.isNewUser) {
-        await addUser({ displayName, email, photoURL, uid });
-      }
-    } catch (error) {
-      alert(error.message);
-      // toast.error(error.message);
-      setLoading(false);
-    }
-  }
+  //register
 
   const handleLogin = async (Provider) => {
     setLoading(true);
@@ -74,29 +60,36 @@ const SignInScreen = () => {
 
   return (
     <div className="signInScreen">
-      <form>
-        <h1>Đăng nhập</h1>
-        <input ref={emailRef} placeholder="Email" type="email"></input>
-        <input ref={passwordRef} placeholder="Password" type="password"></input>
-        <button type="submit" onClick={signIn}>
-          Đăng nhập
-        </button>
+      {signUp ? (
+        <SignUpScreen />
+      ) : (
+        <form>
+          <h1>Đăng nhập</h1>
+          <input ref={emailRef} placeholder="Email" type="email"></input>
+          <input ref={passwordRef} placeholder="Password" type="password"></input>
+          <button type="submit" onClick={signIn}>
+            Đăng nhập
+          </button>
 
-        <h5>
-          <span className="signInScreen_gray">Bạn mới tham gia Netflix? </span>
-          <span className="signupScreen_link" onClick={register}>
-            Đăng ký ngay.
-          </span>
-        </h5>
+          <h5>
+            <span className="signInScreen_gray">Bạn mới tham gia Netflix? </span>
+            <button
+              onClick={() => {
+                setSignUp(true);
+              }}>
+              <span className="signupScreen_link">Đăng ký ngay.</span>
+            </button>
+          </h5>
 
-        <button
-          className={`login-form-button login-form-google ${loading ? 'disableButton' : ''}`}
-          onClick={() => handleLogin(googleProvider)}
-          disabled={loading}>
-          <box-icon name="google" type="logo" flip="vertical" color="#f7eeee"></box-icon>
-          <span>Đăng nhập bằng Google</span>
-        </button>
-      </form>
+          <button
+            className={`login-form-button login-form-google ${loading ? 'disableButton' : ''}`}
+            onClick={() => handleLogin(googleProvider)}
+            disabled={loading}>
+            <box-icon name="google" type="logo" flip="vertical" color="#f7eeee"></box-icon>
+            <span>Đăng nhập bằng Google</span>
+          </button>
+        </form>
+      )}
     </div>
   );
 };
