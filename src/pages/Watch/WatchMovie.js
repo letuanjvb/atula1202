@@ -32,8 +32,8 @@ function WatchMovie() {
 
       <div className="watch-movie-container">
         <div className="watch-wrap">
-          <EmbedVideoMovie id={id} />
-          {/* <Player /> */}
+          {/* <EmbedVideoMovie id={id} /> */}
+          <Player />
           <MovieInfo info={info} />
 
           <Comment movieId={id} />

@@ -1,7 +1,7 @@
-import axios from '../../Library/axios';
+import axios from '../../library/axios';
 import React, { useEffect, useState } from 'react';
 import './Banner.css';
-import requests from '../../Library/Requests';
+import requests from '../../library/Requests';
 import { useNavigate } from 'react-router-dom';
 import videoBg from '../../videos/Avengers-banner.webm';
 import { GoMute } from 'react-icons/go';
