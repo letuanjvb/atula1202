@@ -1,19 +1,19 @@
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation } from "swiper";
-import "swiper/swiper-bundle.min.css";
-import "swiper/swiper.min.css";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation } from 'swiper';
+import 'swiper/swiper-bundle.min.css';
+import 'swiper/swiper.min.css';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import useInnerWidth from "../../hook/useInnerWidth";
-import Skeleton from "../Skeleton/Skeleton";
+import useInnerWidth from '../../hooks/useInnerWidth';
+import Skeleton from '../Skeleton/Skeleton';
 
-import "./Simular.css";
+import './Simular.css';
 
-import { API_KEY, BASE_URL } from "../../utils/constans";
-import { Link, useParams } from "react-router-dom";
-import MovieItem from "../Movie/MovieItem";
+import { API_KEY, BASE_URL } from '../../utils/constans';
+import { Link, useParams } from 'react-router-dom';
+import MovieItem from '../Movie/MovieItem';
 
 const Simular = () => {
   SwiperCore.use([Navigation]);
@@ -42,9 +42,7 @@ const Simular = () => {
 
   useEffect(() => {
     const getMovie = () => {
-      fetch(
-        `${BASE_URL}/${media_type || "tv"}/${id}/similar?api_key=${API_KEY}`
-      )
+      fetch(`${BASE_URL}/${media_type || 'tv'}/${id}/similar?api_key=${API_KEY}`)
         .then((res) => res.json())
         .then((data) => {
           setMovie(data.results);
@@ -65,18 +63,13 @@ const Simular = () => {
       <div className="title">
         <h1>Similar</h1>
       </div>
-      <Swiper
-        navigation
-        grabCursor={true}
-        spaceBetween={20}
-        slidesPerView={item}
-      >
+      <Swiper navigation grabCursor={true} spaceBetween={20} slidesPerView={item}>
         {!loading ? (
           movie
             ?.filter((p) => p.id !== id)
             .map((item) => (
               <SwiperSlide key={item.id}>
-                <Link to={`/details/${media_type || "tv"}/${item.id}`}>
+                <Link to={`/details/${media_type || 'tv'}/${item.id}`}>
                   <MovieItem data={item} />
                 </Link>
               </SwiperSlide>

@@ -6,7 +6,7 @@ import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
 import { useEffect, useState } from 'react';
 import Button from '../Button/Button';
-import useInnerWidth from '../../hook/useInnerWidth';
+import useInnerWidth from '../../hooks/useInnerWidth';
 import Skeleton from '../Skeleton/Skeleton';
 import './Slider.css';
 import { API_KEY, BASE_URL } from '../../utils/constans';
