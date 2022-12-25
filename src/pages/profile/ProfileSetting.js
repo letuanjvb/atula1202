@@ -9,7 +9,8 @@ import { useStore } from '../../stored';
 
 const UserSetting = () => {
   // const { setLoading, loading } = useStore((state) => state);
-  const user = useStore((state) => state);
+  const user = useStore((state) => state.user);
+
   return (
     <div className="profileScreen">
       <Navside />
@@ -29,9 +30,9 @@ const UserSetting = () => {
               <div className="profileScreen_content1">Không có thông tin thanh toán</div>
             </div>
             <div className="profileScreen_footer">
-              <div className="profileScreen_content1">Thay đổi email</div>
-              <div className="profileScreen_content1">Thay đổi mật khẩu</div>
-              <div className="profileScreen_content1">Thêm số điện thoại</div>
+              <button className="profileScreen_content1">Thay đổi email</button>
+              <button className="profileScreen_content1">Thay đổi mật khẩu</button>
+              <button className="profileScreen_content1">Thêm số điện thoại</button>
             </div>
           </div>
           <div className="profileScreen_article">

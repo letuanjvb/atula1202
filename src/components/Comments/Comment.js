@@ -21,8 +21,8 @@ const Comment = ({ movieId }) => {
       responseTo: null,
       movieId: movieId,
       userId: user.uid,
-      userName: user.displayName,
-      avatar: user.photoURL,
+      userName: user.displayName ? user.displayName : user.email,
+      avatar: user.photoURL ? user.photoURL : '/user-non-avatar.png',
       content: comment,
       reactions: [],
       created_at: Date.now()
