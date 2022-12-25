@@ -1,16 +1,16 @@
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation } from "swiper";
-import "swiper/swiper-bundle.min.css";
-import "swiper/swiper.min.css";
-import { useEffect, useState } from "react";
-import Skeleton from "../Skeleton/Skeleton";
-import "./Slider.css";
-import useInnerWidth from "../../hook/useInnerWidth";
-import { API_KEY, BASE_URL } from "../../utils/constans";
-import { Link } from "react-router-dom";
-import Button from "../Button/Button";
-import MovieItem from "../Movie/MovieItem";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation } from 'swiper';
+import 'swiper/swiper-bundle.min.css';
+import 'swiper/swiper.min.css';
+import { useEffect, useState } from 'react';
+import Skeleton from '../Skeleton/Skeleton';
+import './Slider.css';
+import useInnerWidth from '../../hooks/useInnerWidth';
+import { API_KEY, BASE_URL } from '../../utils/constans';
+import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
+import MovieItem from '../Movie/MovieItem';
 
 const SliderTv = ({ type }) => {
   SwiperCore.use([Navigation]);
@@ -36,7 +36,7 @@ const SliderTv = ({ type }) => {
   useEffect(() => {
     const getMovie = () => {
       fetch(
-        type === "trending"
+        type === 'trending'
           ? `${BASE_URL}/trending/tv/week?api_key=${API_KEY}`
           : `${BASE_URL}/tv/${type}?api_key=${API_KEY}`
       )
@@ -60,15 +60,10 @@ const SliderTv = ({ type }) => {
       <div className="title">
         <h1>TV {type}</h1>
         <Link to={`/tv/${type}`}>
-          <Button content={"Xem thêm"} />
+          <Button content={'Xem thêm'} />
         </Link>
       </div>
-      <Swiper
-        navigation
-        grabCursor={true}
-        spaceBetween={20}
-        slidesPerView={item}
-      >
+      <Swiper navigation grabCursor={true} spaceBetween={20} slidesPerView={item}>
         {!loading ? (
           movie.map((item) => (
             <SwiperSlide key={item.id}>

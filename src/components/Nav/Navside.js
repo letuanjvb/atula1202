@@ -10,6 +10,7 @@ import { BsPeople } from 'react-icons/bs';
 import { AiOutlineFire } from 'react-icons/ai';
 import { CgProfile } from 'react-icons/cg';
 import { AiOutlineSearch } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const Navside = () => {
   const history = useNavigate();
@@ -29,8 +30,10 @@ const Navside = () => {
 
           <li className="nav-item">
             <div className="nav-link">
-              <AiOutlineSearch className="nav-link-icon" />
-              <span className="link-text">Tìm kiếm</span>
+              <Link to="/search">
+                <AiOutlineSearch className="nav-link-icon" />
+                <span className="link-text">Tìm kiếm</span>
+              </Link>
             </div>
           </li>
 
