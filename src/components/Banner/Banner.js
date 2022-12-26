@@ -23,8 +23,6 @@ const Banner = () => {
     fetchData();
   }, []);
 
-  console.log(movie);
-
   return (
     <header className="banner">
       <video src={videoBg} autoPlay loop muted />

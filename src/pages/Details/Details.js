@@ -16,8 +16,10 @@ import StarRatings from 'react-star-ratings';
 import './details.css';
 
 function DetailsMovie() {
-  const param = useParams();
-  const { media_type, id } = param;
+  // const param = useParams();
+  // const { media_type, id } = param;
+  let { media_type, id } = useParams();
+  console.log(media_type, id);
   const [data, setData] = useState({});
   const [showModal, setShowModal] = useState(false);
   const { user, favoriteList, setFavoriteList } = useStore((state) => state);
