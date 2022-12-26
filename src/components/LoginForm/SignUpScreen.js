@@ -1,14 +1,14 @@
 import React, { useRef } from 'react';
 import './SignInScreen.css';
-import { Auth } from '../../config/firebase';
+
 import { auth } from '../../config/firebase';
 import { addUser } from '../../actions/fireStoreActions';
-import { useStore } from '../../stored';
+
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const SignUpScreen = () => {
   //Chưa học useRef
-  const displayNameRef = useRef(null);
+
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
