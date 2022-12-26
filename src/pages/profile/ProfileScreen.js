@@ -1,7 +1,7 @@
 import React from 'react';
-import './ProfileScreen.css';
-import Navside from '../../components/Nav/Navside';
-import Footer from '../../components/Footer/Footer';
+import './profileScreen.css';
+import Navside from '../../components/nav/navSide';
+import Footer from '../../components/footer/footer';
 // import { auth } from '../Library/firebase';
 import { useStore } from '../../stored';
 

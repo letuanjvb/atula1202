@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import MovieItem from '../../components/Movie/MovieItem';
-import Skeleton from '../../components/Skeleton/Skeleton';
+import MovieItem from '../../components/movie/movieItem';
+import Skeleton from '../../components/skeleton/skeleton';
 import { useSearchParams } from '../../hooks/useSearchParams';
 import { BASE_URL, API_KEY } from '../../utils/constans';
-import Title from '../../components/Shared/Title';
+import Title from '../../components/shared/tittle';
 
 function SearchResults() {
   const searchParams = useSearchParams();

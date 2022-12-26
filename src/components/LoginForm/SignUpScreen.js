@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
-import './SignInScreen.css';
+import './signInScreen.css';
+import { Auth } from '../../config/firebase';
 
 import { auth } from '../../config/firebase';
 import { addUser } from '../../actions/fireStoreActions';

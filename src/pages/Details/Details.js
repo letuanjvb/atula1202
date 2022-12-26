@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { API_KEY, BASE_URL } from '../../utils/constans';
-import Button from '../../components/Button/Button';
+import Button from '../../components/button/button';
 import { Link } from 'react-router-dom';
-import Cast from '../../components/Cast/Cast';
-import Simular from '../../components/Simular/Simular';
-import ModalTrailer from '../../components/Trailer/ModalTrailer';
-import Title from '../../components/Shared/Title';
+import Cast from '../../components/cast/cast';
+import Simular from '../../components/simular/simular';
+import ModalTrailer from '../../components/trailer/modalTrailer';
+import Title from '../../components/shared/tittle';
 import { toast } from 'react-toastify';
 import { addMovieFromPlaylist } from '../../actions/fireStoreActions';
-import Loading from '../../components/Loading/Loading';
+import Loading from '../../components/loading/loading';
 import { addMovieLocal } from '../../utils/localStro';
 import { useStore } from '../../stored';
 import StarRatings from 'react-star-ratings';
-import './Details.css';
+import './details.css';
 
 function DetailsMovie() {
   // const param = useParams();

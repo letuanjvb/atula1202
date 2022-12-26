@@ -3,7 +3,7 @@
 }
 
 .cast-title {
-  color: #fff;
+  color: white;
   font-size: 20px;
   font-weight: 400;
   margin-top: 40px;
@@ -16,12 +16,12 @@
 }
 
 .cast-name {
-  color: #fff;
+  color: white;
   font-size: 14px;
   line-height: 1.5;
 }
 
 .cast-character {
-  color: #f1c40f;
+  color: yellow;
   font-size: 12px;
 }

@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { deleteFavoriteMovie } from "../../actions/fireStoreActions";
-import MovieItem from "../../components/Movie/MovieItem";
+import MovieItem from "../../components/movie/movieItem";
 import Loading from "../../components/Loading/Loading";
 import { useStore } from "../../stored";
-import Title from "../../components/Shared/Title";
+import Title from "../../components/shared/tittle";
 import "./Favorite.css";
 
 const FavoriteList = () => {

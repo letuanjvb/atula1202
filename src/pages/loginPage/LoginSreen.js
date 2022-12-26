@@ -1,21 +1,21 @@
-import React from "react";
-import "./LoginScreen.css";
-import { useState } from "react";
-import SignInScreen from "../../components/LoginForm/SignInScreen";
-import Footer from "../../components/Footer/Footer";
-import PC from "../../images/loginScreen_cardInfo_PC.webp";
-import Down from "../../images/loginScreen_cardInfo_down.jpg";
-import Money from "../../images/loginScreen_cardInfo_money.webp";
-import logo from "../../images/logo.png";
+import React from 'react';
+import './loginScreen.css';
+import { useState } from 'react';
+import SignInScreen from '../../components/loginForm/signInScreen';
+import Footer from '../../components/footer/footer';
+import PC from '../../images/loginScreen_cardInfo_PC.webp';
+import Down from '../../images/loginScreen_cardInfo_down.jpg';
+import Money from '../../images/loginScreen_cardInfo_money.webp';
+import logo from '../../images/logo.png';
 
-const LoginSreen = () => {
+const LoginScreen = () => {
   const [signIn, setSignIn] = useState(false);
 
   return (
     <div>
       <div className="loginScreen">
         <div className="loginScreen_background">
-          <img className="loginScreen_logo" src={logo} alt=""></img>
+          <img className="loginScreen_logo" src={logo} alt="" ></img>
           <button
             onClick={() => {
               setSignIn(true);
@@ -34,16 +34,17 @@ const LoginSreen = () => {
             <SignInScreen />
           ) : (
             <>
-              <h1>
-                Chương trình truyền hình, phim không giới hạn và nhiều nội dung
-                khác.
-              </h1>
-              <h2>Xem ở mọi nơi. Hủy bất kỳ lúc nào.</h2>
-              <h3>
-                Bạn đã sẵn sàng xem chưa? Nhập email để tạo hoặc kích hoạt lại
-                tư cách thành viên của bạn.
-              </h3>
-
+              <div className='loginScreen_detail'>
+                <h1>
+                  Chương trình truyền hình, phim không giới hạn và nhiều nội
+                  dung khác.
+                </h1>
+                <h2>Xem ở mọi nơi. Hủy bất kỳ lúc nào.</h2>
+                <h3>
+                  Bạn đã sẵn sàng xem chưa? Nhập email để tạo hoặc kích hoạt lại
+                  tư cách thành viên của bạn.
+                </h3>
+              </div>
               <div className="loginScreen_input">
                 <form>
                   <input type="email" placeholder="Địa chỉ Email"></input>
@@ -53,11 +54,11 @@ const LoginSreen = () => {
                     }}
                     className="loginScreen_getStarted"
                   >
-                    Bắt đầu{" "}
+                    Bắt đầu{' '}
                   </button>
                 </form>
                 <button className="loginScreen_getStarted">
-                  {" "}
+                  {' '}
                   Tài khoản khách
                 </button>
               </div>
@@ -107,4 +108,4 @@ const LoginSreen = () => {
   );
 };
 
-export default LoginSreen;
+export default LoginScreen;

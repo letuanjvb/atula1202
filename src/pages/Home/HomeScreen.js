@@ -1,9 +1,9 @@
 import React from 'react';
-import Banner from '../../components/Banner/Banner';
-import './HomeScreen.css';
-import Navside from '../../components/Nav/Navside';
-import Footer from '../../components/Footer/Footer';
-import Row from '../../components/Row/Row';
+import Banner from '../../components/banner/banner';
+import './homeScreen.css';
+import Navside from '../../components/nav/navSide';
+import Footer from '../../components/footer/footer';
+import Row from '../../components/row/row';
 // import Title from '../../components/Shared/Title';
 
 const HomeScreen = () => {

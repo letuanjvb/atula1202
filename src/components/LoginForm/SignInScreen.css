@@ -1,11 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 .signInScreen {
   width: 400px;
-  height: 450px;
+  height: 540px;
   margin: -100px auto 0px auto;
   padding: 70px 50px;
   background: black;
@@ -93,4 +88,10 @@
 .disableButton {
   opacity: 0.4;
   cursor: not-allowed;
+}
+
+.singInScreen_singup{
+  padding: 0 1rem;
+  background-color: white;
+  cursor: pointer;
 }
