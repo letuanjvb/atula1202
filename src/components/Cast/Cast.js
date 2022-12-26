@@ -1,9 +1,11 @@
+
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { API_KEY, BASE_URL } from "../../utils/constans";
 import CastItem from "./castItem";
 import "./cast.css";
 import Skeleton from "../skeleton/skeleton";
+
 
 function Cast() {
   const params = useParams();
