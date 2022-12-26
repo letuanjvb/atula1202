@@ -1,6 +1,6 @@
 import React from "react";
 import { FadingBalls } from "react-cssfx-loading";
-import "./Loading.css";
+import "./loading.css";
 
 const Loading = () => {
   return (

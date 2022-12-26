@@ -1,8 +1,8 @@
 import React from 'react';
-import './ProfileSetting.css';
+import './profileSetting.css';
 
-import Navside from '../../components/Nav/Navside';
-import Footer from '../../components/Footer/Footer';
+import Navside from '../../components/nav/navSide';
+import Footer from '../../components/footer/footer';
 import { useStore } from '../../stored';
 
 // import { auth } from '../Library/firebase';

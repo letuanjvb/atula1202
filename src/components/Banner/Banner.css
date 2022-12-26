@@ -57,19 +57,19 @@
 }
 .banner_button_right1 {
   color: white;
-  background-color: rgba(51, 51, 51, 0.5);
+  background-color: rgba(50, 50, 50, 0.5);
   font-size: 2rem;
   padding: 5px;
 }
 .banner_button_right1:hover {
   cursor: pointer;
   color: #000;
-  background-color: #e6e6e6;
+  background-color: white;
   transition: all 0.2s;
 }
 
 .banner_button {
-  color: #fff;
+  color: white;
   outline: none;
   border: none;
   font-weight: 600;
@@ -78,17 +78,17 @@
   padding-right: 2rem;
   margin-right: 1rem;
   padding-top: 0.5rem;
-  background-color: rgba(51, 51, 51, 0.5);
+  background-color: rgba(50, 50, 50, 0.5);
   padding-bottom: 0.5rem;
 }
 .banner_button:hover {
   cursor: pointer;
   color: #000;
-  background-color: #e6e6e6;
+  background-color: white;
   transition: all 0.2s;
 }
 .banner_button1 {
-  color: #fff;
+  color: white;
   outline: none;
   border: none;
   font-weight: 800;
@@ -97,13 +97,13 @@
   padding-right: 1rem;
   margin-right: 1rem;
   padding-top: 0.5rem;
-  background-color: rgba(51, 51, 51, 0.5);
+  background-color: rgba(50, 50, 50, 0.5);
   padding-bottom: 0.5rem;
 }
 .banner_button1:hover {
   cursor: pointer;
-  color: #000;
-  background-color: #e6e6e6;
+  color: black;
+  background-color: white;
   transition: all 0.2s;
 }
 
@@ -113,14 +113,6 @@
 
   object-fit: cover;
 }
-
-/* .banner_button_hover img{
-  position: absolute;
-  width: 500px;
-  color: white;
-  font-size: 1rem;
-  opacity: 0.5;
-} */
 
 .banner_button_hover {
   width: 400px;

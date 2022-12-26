@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BASE_URL, API_KEY } from "../../utils/constans";
-import EspItem from "./EspItem";
+import EspItem from "./espItem";
 
 const SeasonItem = ({ item, seasonCurrent, setSeasonCurrent, id }) => {
   const [espData, setEspData] = useState([]);

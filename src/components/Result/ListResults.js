@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Result.css";
-import ResultItem from "./ResultItem";
-import ResultSkeleton from "./ResultSkeleton";
+import "./result.css";
+import ResultItem from "./resultItem";
+import ResultSkeleton from "./resultSkeleton";
 
 const ListResults = ({ results, loading, keyWord }) => {
   if (loading) {

@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { API_KEY, BASE_URL } from '../../utils/constans';
-import MovieItem from '../../components/Movie/MovieItem';
-import Skeleton from '../../components/Skeleton/Skeleton';
-import Title from '../../components/Shared/Title';
-import './ViewMorePage.css';
+import MovieItem from '../../components/movie/movieItem';
+import Skeleton from '../../components/skeleton/skeleton';
+import Title from '../../components/shared/tittle';
+import './viewMorePage.css';
 import 'boxicons';
-import Navside from '../../components/Nav/Navside';
+import Navside from '../../components/nav/navSide';
 
 function ViewMorePage() {
   const { media_type, type } = useParams();

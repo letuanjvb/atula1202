@@ -1,18 +1,16 @@
 import axios from '../../library/axios';
 import React, { useEffect, useState } from 'react';
-import './Banner.css';
-import requests from '../../library/Requests';
+import './banner.css';
+import requests from '../../library/requests';
 import { useNavigate } from 'react-router-dom';
 import videoBg from '../../videos/Avengers-banner.webm';
 import { GoMute } from 'react-icons/go';
 import { ImLoop2 } from 'react-icons/im';
 import { Link } from 'react-router-dom';
-// import bannerImgHover from './images/banner.jpg';
 
 const Banner = () => {
   const history = useNavigate();
   const [isShown, setIsShown] = useState(false);
-  //tạo một bộ phim
   const [movie, setMovie] = useState([]);
 
   useEffect(() => {
@@ -26,10 +24,6 @@ const Banner = () => {
   }, []);
 
   console.log(movie);
-
-  // function truncate(string, n) {
-  //   return string?.length > n ? string.substr(0, n - 1) + "..." : string;
-  // }
 
   return (
     <header className="banner">
@@ -61,7 +55,6 @@ const Banner = () => {
                 <div>Quốc gia: Phim Âu Mỹ</div>
                 <div>Diễn viên:</div>
                 <div>Đạo diễn:</div>
-                {/* <img src={bannerImgHover} alt=""/> */}
               </div>
             )}
           </div>
@@ -77,7 +70,6 @@ const Banner = () => {
           Man kẹt lại ngoài không gian, Hawkeye mất tích. Thor, Captain America, Hulk và Black Widow
           đều chìm trong nỗi đau vô tận vì mất đi những người thân yêu. Họ phải làm gì để cứu vãn
           mọi chuyện ở Avengers: Hồi Kết?
-          {/* {truncate(''movie?.overview'', 150)} */}
         </h1>
       </div>
       <div className="banner_fadeBottom"></div>
