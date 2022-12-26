@@ -1,25 +1,25 @@
 import React, { useEffect } from 'react';
 import './styles/App.css';
-import HomeScreen from './pages/Home/HomeScreen';
+import HomeScreen from './pages/home/homeScreen';
 // eslint-disable-next-line no-unused-vars
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-import LoginSreen from './pages/loginPage/LoginSreen';
+import LoginScreen from './pages/loginPage/loginSreen';
 import { Auth } from './config/firebase';
-import ProfileScreen from './pages/profile/ProfileScreen';
-import Loading from './components/Loading/Loading';
+import ProfileScreen from './pages/profile/profileScreen';
+import Loading from './components/loading/loading';
 import { useStore } from './stored';
 
 //pages
 
-import UserSetting from './pages/profile/ProfileSetting';
-import DetailsMovie from './pages/Details/Details';
-import Search from './pages/Search/Search';
-import SearchResults from './pages/Search/SearchResults';
-import WatchTv from './pages/Watch/Watch';
-import WatchMovie from './pages/Watch/WatchMovie';
-import Player from './components/TV/Player';
-import Navside from './components/Nav/Navside';
-import ViewMorePage from './pages/ViewMore/ViewMorePage';
+import UserSetting from './pages/profile/profileSetting';
+import DetailsMovie from './pages/details/details';
+import Search from './pages/search/search';
+import SearchResults from './pages/search/searchResults';
+import WatchTv from './pages/watch/watch';
+import WatchMovie from './pages/watch/watchMovie';
+import Player from './components/TV/player';
+import Navside from './components/nav/navSide';
+import ViewMorePage from './pages/viewMore/viewMorePage';
 
 function App() {
   // đăng nhập r sẽ load về trang chủ
@@ -56,7 +56,7 @@ function App() {
       {/* <HomeScreen /> */}
       {/* bat buoc phai co tai khoan, neu khong se back ve Login */}
       {!user ? (
-        <LoginSreen />
+        <LoginScreen />
       ) : (
         <Routes>
           <Route path="/profile" element={<ProfileScreen />}></Route>

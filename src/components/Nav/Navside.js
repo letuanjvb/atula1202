@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Navside.css';
+import './navSide.css';
 import logo from '../../images/logo.png';
 import { auth } from '../../config/firebase';
 import { MdOutlineMovieFilter } from 'react-icons/md';

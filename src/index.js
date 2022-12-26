@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter } from 'react-router-dom';
 import './styles/App.css';
-import './styles/Responsive.css';
+import './styles/responsive.css';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
