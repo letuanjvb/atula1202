@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import { API_KEY, BASE_URL } from '../../utils/constans';
 import Button from '../../components/Button/Button';
 import { Link } from 'react-router-dom';
@@ -16,8 +16,10 @@ import StarRatings from 'react-star-ratings';
 import './Details.css';
 
 function DetailsMovie() {
-  const param = useParams();
-  const { media_type, id } = param;
+  // const param = useParams();
+  // const { media_type, id } = param;
+  let { media_type, id } = useParams();
+  console.log(media_type, id);
   const [data, setData] = useState({});
   const [showModal, setShowModal] = useState(false);
   const { user, favoriteList, setFavoriteList } = useStore((state) => state);

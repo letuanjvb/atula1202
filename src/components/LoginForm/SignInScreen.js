@@ -1,12 +1,12 @@
 import React, { useRef, useState } from 'react';
-import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { signInWithPopup } from 'firebase/auth';
 import '../LoginForm/SignInScreen.css';
 import { Auth } from '../../config/firebase';
 import { auth, googleProvider } from '../../config/firebase';
 import { addUser } from '../../actions/fireStoreActions';
 // import { toast } from 'react-toastify';
 import { useStore } from '../../stored';
-import { Link } from 'react-router-dom';
+
 import SignUpScreen from './SignUpScreen';
 
 const SignInScreen = () => {
