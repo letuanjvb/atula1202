@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useStore } from "../../stored";
-import { calculateCreatedTime } from "../../utils/constans";
-import Reaction from "../reaction/reaction";
-import ShowReaction from "../reaction/showReaction";
-import InputReply from "./inputReply";
-import ReplyCommentList from "./replyCommentList";
+import React, { useEffect, useState } from 'react';
+import { calculateCreatedTime } from '../../utils/constans';
+import Reaction from '../reaction/reaction';
+import ShowReaction from '../reaction/showReaction';
+import InputReply from './inputReply';
+import ReplyCommentList from './replyCommentList';
+import { useAuth } from '@frontegg/react';
 
 const CommentItem = ({ item, movieId, listComment }) => {
   const [showReaction, setShowReaction] = useState(false);
@@ -12,7 +12,7 @@ const CommentItem = ({ item, movieId, listComment }) => {
   const [countReply, setCountReply] = useState(0);
   const [showReply, setShowReply] = useState(false);
   const [showReplyItem, setShowReplyItem] = useState(false);
-  const { user } = useStore((state) => state);
+  const { user } = useAuth();
 
   useEffect(() => {
     let count = 0;
@@ -39,7 +39,7 @@ const CommentItem = ({ item, movieId, listComment }) => {
   }, [item.reactions, user]);
 
   return (
-    <div style={{ marginBottom: "30px" }}>
+    <div style={{ marginBottom: '30px' }}>
       <div className="show-comment-items">
         <div className="show-comment-avatar">
           <img alt="avatar" src={item.avatar} />
@@ -52,7 +52,7 @@ const CommentItem = ({ item, movieId, listComment }) => {
             </div>
             <p>
               {item.responseTo !== null && (
-                <span style={{ color: "#2980b9", marginRight: "5px" }}>
+                <span style={{ color: '#2980b9', marginRight: '5px' }}>
                   {listComment.find((p) => p.id === item.responseTo).userName}
                 </span>
               )}
@@ -75,21 +75,21 @@ const CommentItem = ({ item, movieId, listComment }) => {
                 className="like-button"
                 style={{
                   color:
-                    reaction?.type === "like"
-                      ? "#243FD3"
-                      : reaction?.type === "love"
-                      ? "#F33E58"
-                      : "#EAB125",
+                    reaction?.type === 'like'
+                      ? '#243FD3'
+                      : reaction?.type === 'love'
+                      ? '#F33E58'
+                      : '#EAB125',
                 }}
               >
                 {showReaction ? (
-                  <span style={{ color: "#fff" }}>Cancel</span>
+                  <span style={{ color: '#fff' }}>Cancel</span>
                 ) : (
-                  reaction?.type || <span style={{ color: "#fff" }}>Like</span>
+                  reaction?.type || <span style={{ color: '#fff' }}>Like</span>
                 )}
               </p>
               <p onClick={() => setShowReply(!showReply)}>
-                {showReply ? "Cancel" : "Feedback"}
+                {showReply ? 'Cancel' : 'Feedback'}
               </p>
             </div>
           )}
@@ -108,16 +108,16 @@ const CommentItem = ({ item, movieId, listComment }) => {
       {countReply > 0 && (
         <p
           style={{
-            color: "#3EA6FF",
-            marginLeft: "45px",
-            fontSize: "14px",
-            marginTop: "20px",
-            fontWeight: "600",
-            cursor: "pointer",
+            color: '#3EA6FF',
+            marginLeft: '45px',
+            fontSize: '14px',
+            marginTop: '20px',
+            fontWeight: '600',
+            cursor: 'pointer',
           }}
           onClick={() => setShowReplyItem(!showReplyItem)}
         >
-          {showReplyItem ? "Turn off reply" : `View ${countReply} reply!`}
+          {showReplyItem ? 'Turn off reply' : `View ${countReply} reply!`}
         </p>
       )}
 

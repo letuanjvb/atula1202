@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './navSide.css';
 import logo from '../../images/logo.png';
-import { auth } from '../../config/firebase';
 import { MdOutlineMovieFilter } from 'react-icons/md';
 import { RiMovie2Line } from 'react-icons/ri';
 import { AiOutlineHeart } from 'react-icons/ai';

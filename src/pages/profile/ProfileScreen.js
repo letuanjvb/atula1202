@@ -3,7 +3,7 @@ import './profileScreen.css';
 import Navside from '../../components/nav/navside';
 import Footer from '../../components/footer/footer';
 // import { auth } from '../Library/firebase';
-import { useStore } from '../../stored';
+
 import { useAuth } from '@frontegg/react';
 
 const ProfileScreen = () => {
