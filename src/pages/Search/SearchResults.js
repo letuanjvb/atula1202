@@ -5,7 +5,8 @@ import Skeleton from '../../components/skeleton/skeleton';
 import { useSearchParams } from '../../hooks/useSearchParams';
 import { BASE_URL, API_KEY } from '../../utils/constans';
 import Title from '../../components/shared/tittle';
-import Navside from '../../components/nav/navside';
+import Navside from '../../components/nav/navSide';
+
 
 function SearchResults() {
   const searchParams = useSearchParams();
@@ -58,15 +59,16 @@ function SearchResults() {
   }
 
   return (
-    <div>
+
+    <div className=''>
       <Navside />
-      <div className="container">
+      <div className="container bodyside">
         {/* Change document title */}
-        <Title title={`Results for ${keyword}`} />
+        <Title title={`Tìm kiếm: ${keyword}`} />
 
         <div className="searchResults">
-          <h1 className="searchResults-title">Results for {`"${keyword}"`}</h1>
-          <div className="grid-layout grid-gap-20px-20px">
+          <h1 className="searchResults-title">Kết quả: {`"${keyword}"`}</h1>
+          <div className="grid-layout grid-gap-1rem-1rem">
             {!loading ? (
               results.map((result) => (
                 <Link

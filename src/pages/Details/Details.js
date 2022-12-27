@@ -13,6 +13,9 @@ import Loading from '../../components/loading/loading';
 import { addMovieLocal } from '../../utils/localStro';
 import { useStore } from '../../stored';
 import StarRatings from 'react-star-ratings';
+import Navside from '../../components/nav/navSide';
+import Footer from '../../components/footer/footer';
+import { AiOutlineHeart } from 'react-icons/ai';
 import './details.css';
 
 function DetailsMovie() {
@@ -50,7 +53,7 @@ function DetailsMovie() {
         id: data?.id,
         poster_path: data?.poster_path,
         media_type: media_type,
-
+        title: data?.name || data?.title,
         viewAt: Date.now(),
       });
     }
@@ -76,118 +79,128 @@ function DetailsMovie() {
 
   return (
     <div>
-      <div
-        className={`details ${loading ? 'skeleton' : ''}`}
-        style={{
-          backgroundImage: `url(https://image.tmdb.org/t/p/original/${data?.backdrop_path})`,
-        }}
-      >
-        <div className="container">
-          <div className="details-container">
-            <div className={`details-poster ${loading ? 'skeleton' : ''}`}>
-              {!loading && (
-                <img
-                  className={`details-poster-img`}
-                  src={`https://image.tmdb.org/t/p/w500${data?.poster_path}`}
-                  alt="poster"
-                />
-              )}
-            </div>
-            <div className="details-info">
-              {loading ? (
-                <h1 className="mr-bottom-20px skeleton skeleton-text h-36px">
-                  {''}
-                </h1>
-              ) : (
-                <h1 className={`details-info-title`}>
-                  {data.name || data.title}
-                </h1>
-              )}
-              {loading ? (
-                <>
-                  <p className="skeleton skeleton-text h-20px"></p>
-                  <p className="skeleton skeleton-text h-20px"></p>
-                  <p className="skeleton skeleton-text h-20px"></p>
-                  <p className="skeleton skeleton-text h-20px last-child"></p>
-                </>
-              ) : (
-                <p className="details-info-overview">{data.overview}</p>
-              )}
-              {loading ? (
-                <>
-                  <p className="mr-top-20px skeleton skeleton-text h-20px"></p>
-                </>
-              ) : (
-                <p className="release_date">
-                  {data.release_date
-                    ? `Release date: ${data.release_date}`
-                    : `Last episode: ${data.last_air_date}`}
-                </p>
-              )}
-              <div className="genres">
-                {data.genres &&
-                  data.genres.map((item) => (
-                    <Button key={item.id} content={item.name} />
-                  ))}
-              </div>
-              <div className="ratings">
-                <StarRatings
-                  rating={data.vote_average}
-                  starRatedColor="#e74c3c"
-                  numberOfStars={10}
-                  name="rating"
-                  starDimension="15px"
-                  starSpacing="2px"
-                />
-                <div className="ratings-count">{`(${
-                  data.vote_count || 0
-                } vote)`}</div>
-              </div>
 
-              <div className="watch">
-                <Link
-                  className="watch-link"
-                  to={
-                    media_type === 'tv'
-                      ? `/watch/tv/${id}/season/1/esp/1`
-                      : `/watch/movie/${id}`
-                  }
-                >
-                  Watch Now
-                </Link>
-                <span className="watch-link" onClick={() => setShowModal(true)}>
-                  Watch Trailer
-                </span>
-                <span className="watch-link" onClick={handleAddToFavorites}>
-                  Add to favorites
-                </span>
+      <Navside />
+      <div className="bodyside">
+        <Title title={`${data.name || data.title}`} />
+        <div
+          className={`details ${loading ? 'skeleton' : ''}`}
+          style={{
+            backgroundImage: `url(https://image.tmdb.org/t/p/original/${data?.backdrop_path})`,
+          }}
+        >
+          <div className="container">
+            <div className="details-container">
+              <div className={`details-poster ${loading ? 'skeleton' : ''}`}>
+                {!loading && (
+                  <img
+                    className={`details-poster-img`}
+                    src={`https://image.tmdb.org/t/p/w500${data?.poster_path}`}
+                    alt="poster"
+                  />
+                )}
+
+              </div>
+              <div className="details-info">
+                {loading ? (
+                  <h1 className="mr-bottom-20px skeleton skeleton-text h-36px">
+                    {''}
+                  </h1>
+                ) : (
+                  <h1 className={`details-info-title`}>
+                    {data.name || data.title}
+                  </h1>
+                )}
+                {loading ? (
+                  <>
+                    <p className="skeleton skeleton-text h-20px"></p>
+                    <p className="skeleton skeleton-text h-20px"></p>
+                    <p className="skeleton skeleton-text h-20px"></p>
+                    <p className="skeleton skeleton-text h-20px last-child"></p>
+                  </>
+                ) : (
+                  <p className="details-info-overview">{data.overview}</p>
+                )}
+                {loading ? (
+                  <>
+                    <p className="mr-top-20px skeleton skeleton-text h-20px"></p>
+                  </>
+                ) : (
+                  <p className="release_date">
+                    {data.release_date
+                      ? `Release date: ${data.release_date}`
+                      : `Last episode: ${data.last_air_date}`}
+                  </p>
+                )}
+                <div className="genres">
+                  {data.genres &&
+                    data.genres.map((item) => (
+                      <Button key={item.id} content={item.name} />
+                    ))}
+                </div>
+                <div className="ratings">
+                  <StarRatings
+                    rating={data.vote_average}
+                    starRatedColor="red"
+                    numberOfStars={10}
+                    name="rating"
+                    starDimension="15px"
+                    starSpacing="2px"
+                  />
+                  <div className="ratings-count">{`(${
+                    data.vote_count || 0
+                  } vote)`}</div>
+                </div>
+
+
+                <div className="watch">
+                  <Link
+                    className="watch-link"
+                    to={
+                      media_type === 'tv'
+                        ? `/watch/tv/${id}/season/1/esp/1`
+                        : `/watch/movie/${id}`
+                    }
+                  >
+                    Xem phim
+                  </Link>
+                  <span
+                    className="watch-link"
+                    onClick={() => setShowModal(true)}
+                  >
+                    Trailer
+                  </span>
+                  <span className="watch-link" title='Thêm vào danh mục của tôi'><AiOutlineHeart /></span>
+                </div>
+
               </div>
             </div>
           </div>
         </div>
+
+        <div className="container">
+          <p className="homepage">
+            Homepage:{' '}
+            <a
+              target="_blank"
+              rel="noreferrer"
+              className="homepage-link"
+              href={data.homepage}
+            >
+              {data.homepage}
+            </a>
+          </p>
+
+          <Cast />
+          <Simular />
+          {showModal ? (
+            <ModalTrailer show={showModal} setShow={setShowModal} />
+          ) : null}
+        </div>
+
+        {loadingAddMovie && <Loading />}
+        <Footer />
       </div>
-
-      <div className="container">
-        <p className="homepage">
-          Homepage:{' '}
-          <a
-            target="_blank"
-            rel="noreferrer"
-            className="homepage-link"
-            href={data.homepage}
-          >
-            {data.homepage}
-          </a>
-        </p>
-
-        <Cast />
-        <Simular />
-        {showModal ? (
-          <ModalTrailer show={showModal} setShow={setShowModal} />
-        ) : null}
-      </div>
-
-      {loadingAddMovie && <Loading />}
     </div>
   );
 }

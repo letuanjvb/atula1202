@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import './banner.css';
 import requests from '../../library/requests';
 import { useNavigate } from 'react-router-dom';
-import videoBg from '../../videos/Avengers-banner.webm';
+import videoBg from '../../videos/WizardBattle.mp4';
 import { GoMute } from 'react-icons/go';
 import { ImLoop2 } from 'react-icons/im';
 import { Link } from 'react-router-dom';
@@ -29,9 +29,12 @@ const Banner = () => {
 
   return (
     <header className="banner">
-      <video src={videoBg} autoPlay loop muted />
+      <video src={videoBg} autoPlay muted playsinline loop />
       <div className="banner_contents">
-        <h1 className="banner_title"> Avengers - Endgame </h1>
+        <h1 className="banner_title">
+          {' '}
+          Harry Potter and the Order of the Phoenix{' '}
+        </h1>
         <div className="banner_buttons">
           <div className="banner_button_left">
             <Link className="banner_button" to={`/watchplayer`}>
@@ -68,18 +71,19 @@ const Banner = () => {
             <ImLoop2 className="banner_button_right1" />
             <GoMute className="banner_button_right1" />
           </div>
-          <div className="banner_gradient" />
         </div>
         <h1 className="banner_description">
-          Cú búng tay của Thanos đã khiến toàn bộ dân số biến mất một nửa. Các
-          siêu anh hùng đánh mất bạn bè, người thân và đánh mất cả chính mình.
-          Bộ sáu Avengers đầu tiên tứ tán. Iron Man kẹt lại ngoài không gian,
-          Hawkeye mất tích. Thor, Captain America, Hulk và Black Widow đều chìm
-          trong nỗi đau vô tận vì mất đi những người thân yêu. Họ phải làm gì để
-          cứu vãn mọi chuyện ở Avengers: Hồi Kết?
+
+
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+          faucibus, nulla sed tristique mattis, justo dui volutpat leo, ac
+          dapibus dolor ligula ac urna. Quisque iaculis pretium purus, non
+          efficitur neque sodales nec. Nunc ac mi purus. Phasellus condimentum
+          mauris dui, sit amet tempor enim elementum scelerisque. 
+
         </h1>
       </div>
-      <div className="banner_fadeBottom"></div>
+      <div className="banner_gradient" />
     </header>
   );
 };

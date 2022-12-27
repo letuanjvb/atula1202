@@ -62,7 +62,7 @@ function ViewMorePage() {
     <div className="viewmore-container">
       <Navside />
       {/* Change document title */}
-      <div className="viewmore-bodyside">
+      <div className="bodyside">
         <Title title={`${media_type.toUpperCase()} | ${type.toUpperCase()}`} />
 
         <div className="view_more">
@@ -70,7 +70,7 @@ function ViewMorePage() {
             {media_type} {type}
           </h1>
 
-          <div className="grid-layout grid-gap-20px-20px">
+          <div className="grid-layout grid-gap-1rem-1rem">
             {!loading ? (
               movie.map((item) => (
                 <Link key={item.id} to={`/details/${media_type}/${item.id}`}>

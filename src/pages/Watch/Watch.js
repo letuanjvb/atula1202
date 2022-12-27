@@ -4,9 +4,13 @@ import { BASE_URL, API_KEY } from '../../utils/constans';
 import Simular from '../../components/simular/simular';
 import Title from '../../components/shared/tittle';
 import Comment from '../../components/comment/comment';
-import SeasonItem from '../../components/tv/seasonItem';
-import TVInfo from '../../components/tv/tvInfo.js';
-import EmbedVideoTv from '../../components/tv/embedVideoTv';
+
+import SeasonItem from '../../components/TV/seasonItem';
+import TVInfo from '../../components/TV/TVInfo';
+import EmbedVideoTv from '../../components/TV/embedVideoTv';
+import Navside from '../../components/nav/navSide';
+import Footer from '../../components/footer/footer';
+
 
 function Watch() {
   const { esp, season, id } = useParams();
@@ -57,38 +61,44 @@ function Watch() {
   }, [esp, season, id]);
 
   return (
-    <div className="container">
-      <Title
-        title={`${nameTv} | Season ${season} | Episode ${esp} | Phim Moi`}
-      />
 
-      <div className="watch-tv-container">
-        <div className="watch-wrap">
-          <EmbedVideoTv id={id} espTv={espTv} seasonTv={seasonTv} />
-          <TVInfo nameTv={nameTv} espCurrent={espCurrent} />
-          <Comment movieId={id} />
+    <div>
+      <Navside />
+      <div className="container bodyside">
+        <Title
+          title={`${nameTv} | Season ${season} | Episode ${esp} | Phim Moi`}
+        />
+        <div className="watch-tv-container">
+          <div className="watch-wrap">
+            <EmbedVideoTv id={id} espTv={espTv} seasonTv={seasonTv} />
+            <TVInfo nameTv={nameTv} espCurrent={espCurrent} />
+            <Comment movieId={id} />
+          </div>
+
+
+          <div className="watch-tv-other-season">
+            {seasonData.map((item) => {
+              if (item.season_number > 0) {
+                return (
+                  <SeasonItem
+                    seasonCurrent={seasonCurrent}
+                    setSeasonCurrent={setSeasonCurrent}
+                    id={id}
+                    key={item.id}
+                    item={item}
+                  />
+                );
+              }
+
+              return null;
+            })}
+          </div>
         </div>
-
-        <div className="watch-tv-other-season">
-          {seasonData.map((item) => {
-            if (item.season_number > 0) {
-              return (
-                <SeasonItem
-                  seasonCurrent={seasonCurrent}
-                  setSeasonCurrent={setSeasonCurrent}
-                  id={id}
-                  key={item.id}
-                  item={item}
-                />
-              );
-            }
-
-            return null;
-          })}
+        <div className="simularMovie">
+          <Simular />
         </div>
+        <Footer />
       </div>
-
-      <Simular />
     </div>
   );
 }

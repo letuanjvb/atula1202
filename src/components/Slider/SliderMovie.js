@@ -79,7 +79,7 @@ const SliderMovie = ({ type }) => {
             </SwiperSlide>
           ))
         ) : (
-          <div className="grid-layout grid-gap-20px-20px">
+          <div className="grid-layout grid-gap-1rem-1rem">
             <Skeleton />
             <Skeleton />
             <Skeleton />

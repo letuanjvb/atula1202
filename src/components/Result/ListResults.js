@@ -25,8 +25,8 @@ const ListResults = ({ results, loading, keyWord }) => {
         to={`/results?q=${keyWord}`}
         style={{
           width: "100%",
-          backgroundColor: "#111",
-          color: "#fff",
+          backgroundColor: "black",
+          color: "white",
           padding: "10px 16px",
           border: "none",
           borderRadius: "10px",

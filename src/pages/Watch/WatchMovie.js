@@ -6,6 +6,8 @@ import Title from '../../components/shared/tittle';
 import Comment from '../../components/comment/comment';
 import EmbedVideoMovie from '../../components/movie/embedVideoMovie';
 import MovieInfo from '../../components/movie/movieInfo';
+import Navside from '../../components/nav/navSide';
+import Footer from '../../components/footer/footer';
 import './watch.css';
 // import Player from '../../components/TV/Player';
 
@@ -27,20 +29,24 @@ function WatchMovie() {
   }, [id]);
 
   return (
-    <div className="container">
-      <Title title={`${info?.title} | Watch | Phim Moi`} />
+    <div>
+      <Navside />
+      <div className="container bodyside">
+        <Title title={`${info?.title} | Watch | Filmmitu`} />
 
-      <div className="watch-movie-container">
-        <div className="watch-wrap">
-          <EmbedVideoMovie id={id} />
-          {/* <Player />  */}
-          <MovieInfo info={info} />
+        <div className="watch-movie-container">
+          <div className="watch-wrap">
+            <EmbedVideoMovie id={id} />
+            {/* <Player />  */}
+            <MovieInfo info={info} />
 
-          <Comment movieId={id} />
+            <Comment movieId={id} />
+          </div>
+          <div className="simularMovie">
+            <SimularColumn />
+          </div>
         </div>
-        <div className="simularMovie">
-          <SimularColumn />
-        </div>
+        <Footer />
       </div>
     </div>
   );

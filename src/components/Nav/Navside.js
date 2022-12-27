@@ -9,6 +9,7 @@ import { BsPeople } from 'react-icons/bs';
 import { AiOutlineFire } from 'react-icons/ai';
 import { CgProfile } from 'react-icons/cg';
 import { AiOutlineSearch } from 'react-icons/ai';
+import { FaSignOutAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { ContextHolder } from '@frontegg/react';
 import { AdminPortal } from '@frontegg/react';
@@ -26,7 +27,7 @@ const Navside = () => {
   const history = useNavigate();
 
   return (
-    <div className="body">
+    <div className="nav-body">
       <nav className="navbar">
         <ul className="navbar-nav">
           <li className="logo">
@@ -53,21 +54,21 @@ const Navside = () => {
           <li className="nav-item">
             <div className="nav-link">
               <MdOutlineMovieFilter className="nav-link-icon" />
-              <span className="link-text">Phim lẻ</span>
+              <span className="link-text" onClick={() => history('/')}>Phim lẻ</span>
             </div>
           </li>
 
           <li className="nav-item">
             <div className="nav-link">
               <RiMovie2Line className="nav-link-icon" />
-              <span className="link-text">TV series</span>
+              <span className="link-text" onClick={() => history('/')}>TV series</span>
             </div>
           </li>
 
           <li className="nav-item">
             <div className="nav-link">
               <AiOutlineFire className="nav-link-icon" />
-              <span className="link-text">Mới và nổi bật</span>
+              <span className="link-text" onClick={() => history('/')}>Mới và nổi bật</span>
             </div>
           </li>
 
@@ -97,7 +98,14 @@ const Navside = () => {
               </span>
             </div>
           </li>
-
+          <li className="nav-item">
+            <div className="nav-link" id='hide'>
+              <FaSignOutAlt className="nav-link-icon" onClick={() => auth.signOut()}/>
+              <span className="link-text">
+                Hehe u cant see me
+              </span>
+            </div>
+          </li>
           <li className="nav-item">
             <div className="nav-link">
               <span
@@ -108,6 +116,7 @@ const Navside = () => {
               </span>
             </div>
           </li>
+
         </ul>
       </nav>
     </div>
