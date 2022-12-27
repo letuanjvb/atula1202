@@ -1,8 +1,13 @@
 import React, { useEffect } from 'react';
-import './styles/App.css';
+import './styles/app.css';
 import HomeScreen from './pages/home/homeScreen';
 // eslint-disable-next-line no-unused-vars
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from 'react-router-dom';
 import LoginScreen from './pages/loginPage/loginSreen';
 import { Auth } from './config/firebase';
 import ProfileScreen from './pages/profile/profileScreen';
@@ -17,8 +22,8 @@ import Search from './pages/search/search';
 import SearchResults from './pages/search/searchResults';
 import WatchTv from './pages/watch/watch';
 import WatchMovie from './pages/watch/watchMovie';
-import Player from './components/TV/player';
-import Navside from './components/nav/navSide';
+import Player from './components/tv/player';
+import Navside from './components/nav/navside';
 import ViewMorePage from './pages/viewMore/viewMorePage';
 
 function App() {
@@ -65,8 +70,14 @@ function App() {
           <Route path="/search" element={<Search />}></Route>
           <Route path="/results" element={<SearchResults />}></Route>
           <Route path="/:media_type/:type" element={<ViewMorePage />}></Route>
-          <Route path="/details/:media_type/:id" element={<DetailsMovie />}></Route>
-          <Route path="/watch/tv/:id/season/:season/esp/:esp" element={<WatchTv />}></Route>
+          <Route
+            path="/details/:media_type/:id"
+            element={<DetailsMovie />}
+          ></Route>
+          <Route
+            path="/watch/tv/:id/season/:season/esp/:esp"
+            element={<WatchTv />}
+          ></Route>
           <Route path="/watch/movie/:id" element={<WatchMovie />}></Route>
           <Route path="/player" element={<Player />}></Route>
           <Route path="/navside" element={<Navside />}></Route>

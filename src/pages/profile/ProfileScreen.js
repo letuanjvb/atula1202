@@ -1,6 +1,6 @@
 import React from 'react';
 import './profileScreen.css';
-import Navside from '../../components/nav/navSide';
+import Navside from '../../components/nav/navside';
 import Footer from '../../components/footer/footer';
 // import { auth } from '../Library/firebase';
 import { useStore } from '../../stored';
@@ -16,15 +16,15 @@ const ProfileScreen = () => {
         <div className="profileScreen_body">
           <h1>Hồ sơ cá nhân </h1>
           <div className="profileScreen_info">
-              <img
-                alt="avatar"
-                src={user.photoURL ? user?.photoURL : '/user-non-avatar.png'}
-              />
+            <img
+              alt="avatar"
+              src={user.photoURL ? user?.photoURL : '/user-non-avatar.png'}
+            />
             <div className="profileScreen_details">
               <h1>Gmail:</h1>
               <h2>{user.email}</h2>
               <h1>
-                Tên tài khoản:{' '} 
+                Tên tài khoản:{' '}
                 {user.displayName ? user?.displayName : 'default'}
               </h1>
             </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './profileSetting.css';
 
-import Navside from '../../components/nav/navSide';
+import Navside from '../../components/nav/navside';
 import Footer from '../../components/footer/footer';
 import { useStore } from '../../stored';
 
@@ -25,9 +25,13 @@ const UserSetting = () => {
               <button>Hủy tư cách thành viên</button>
             </div>
             <div className="profileScreen_content">
-              <div className="profileScreen_content1">Tên đăng nhập: {user.email}</div>
+              <div className="profileScreen_content1">
+                Tên đăng nhập: {user.email}
+              </div>
               <div className="profileScreen_content1">Mật khẩu: ********</div>
-              <div className="profileScreen_content1">Không có thông tin thanh toán</div>
+              <div className="profileScreen_content1">
+                Không có thông tin thanh toán
+              </div>
             </div>
             <div className="profileScreen_footer">
               <div className="profileScreen_content">Thay đổi email</div>
@@ -50,14 +54,20 @@ const UserSetting = () => {
             </div>
             <div className="profileScreen_content">
               <div className="">
-                Kiểm soát quyền truy cập vào tài khoản này, xem các thiết bị hoạt động gần đây nhất
-                và hơn thế nữa
+                Kiểm soát quyền truy cập vào tài khoản này, xem các thiết bị
+                hoạt động gần đây nhất và hơn thế nữa
               </div>
             </div>
             <div className="profileScreen_footer">
-              <div className="profileScreen_footer3">Quản lí quyền truy cập và thiết bị</div>
-              <div className="profileScreen_footer3">Đăng xuất khỏi tất cả thiết bị</div>
-              <div className="profileScreen_footer3">Tải xuống thông tin cá nhân</div>
+              <div className="profileScreen_footer3">
+                Quản lí quyền truy cập và thiết bị
+              </div>
+              <div className="profileScreen_footer3">
+                Đăng xuất khỏi tất cả thiết bị
+              </div>
+              <div className="profileScreen_footer3">
+                Tải xuống thông tin cá nhân
+              </div>
             </div>
           </div>
         </div>

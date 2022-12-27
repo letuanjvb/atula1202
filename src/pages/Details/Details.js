@@ -13,7 +13,7 @@ import Loading from '../../components/loading/loading';
 import { addMovieLocal } from '../../utils/localStro';
 import { useStore } from '../../stored';
 import StarRatings from 'react-star-ratings';
-import Navside from '../../components/nav/navSide';
+import Navside from '../../components/nav/navside';
 import Footer from '../../components/footer/footer';
 import { AiOutlineHeart } from 'react-icons/ai';
 import './details.css';
@@ -167,7 +167,12 @@ function DetailsMovie() {
                   >
                     Trailer
                   </span>
-                  <span className="watch-link" title='Thêm vào danh mục của tôi'><AiOutlineHeart /></span>
+                  <span
+                    className="watch-link"
+                    title="Thêm vào danh mục của tôi"
+                  >
+                    <AiOutlineHeart />
+                  </span>
                 </div>
               </div>
             </div>

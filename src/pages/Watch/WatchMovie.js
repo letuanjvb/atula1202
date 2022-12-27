@@ -6,7 +6,7 @@ import Title from '../../components/shared/tittle';
 import Comment from '../../components/comment/comment';
 import EmbedVideoMovie from '../../components/movie/embedVideoMovie';
 import MovieInfo from '../../components/movie/movieInfo';
-import Navside from '../../components/nav/navSide';
+import Navside from '../../components/nav/navside';
 import Footer from '../../components/footer/footer';
 import './watch.css';
 // import Player from '../../components/TV/Player';

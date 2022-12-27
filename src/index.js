@@ -7,7 +7,7 @@ import { ToastContainer } from 'react-toastify';
 import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter } from 'react-router-dom';
-import './styles/App.css';
+import './styles/app.css';
 import './styles/responsive.css';
 
 const container = document.getElementById('root');
