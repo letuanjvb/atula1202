@@ -1,12 +1,15 @@
 import React, { useRef, useState } from 'react';
 import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import './signInScreen.css';
+
+
 import { Auth } from '../../config/firebase';
 import { auth, googleProvider } from '../../config/firebase';
 import { addUser } from '../../actions/fireStoreActions';
 import { useStore } from '../../stored';
 import { Link } from 'react-router-dom';
 import SignUpScreen from './signUpScreen';
+
 
 const SignInScreen = () => {
   const { setLoading, loading } = useStore((state) => state);
