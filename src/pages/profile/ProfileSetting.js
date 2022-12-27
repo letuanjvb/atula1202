@@ -34,9 +34,11 @@ const UserSetting = () => {
               </div>
             </div>
             <div className="profileScreen_footer">
+
               <div className="profileScreen_content">Thay đổi email</div>
               <div className="profileScreen_content">Thay đổi mật khẩu</div>
               <div className="profileScreen_content">Thêm số điện thoại</div>
+
             </div>
           </div>
           <div className="profileScreen_article">

@@ -5,7 +5,7 @@ import Skeleton from '../../components/skeleton/skeleton';
 import { useSearchParams } from '../../hooks/useSearchParams';
 import { BASE_URL, API_KEY } from '../../utils/constans';
 import Title from '../../components/shared/tittle';
-import Navside from '../../components/nav/navside';
+import Navside from '../../components/nav/navSide';
 
 function SearchResults() {
   const searchParams = useSearchParams();
