@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Cast from '../../components/cast/cast';
 import Simular from '../../components/simular/simular';
 import ModalTrailer from '../../components/trailer/modalTrailer';
-import Title from '../../components/shared/tittle';
+
 import { toast } from 'react-toastify';
 import { addMovieFromPlaylist } from '../../actions/fireStoreActions';
 import Loading from '../../components/loading/loading';
@@ -79,6 +79,7 @@ function DetailsMovie() {
 
   return (
     <div>
+
       <Navside />
       <div className="bodyside">
         <Title title={`${data.name || data.title}`} />
@@ -98,6 +99,7 @@ function DetailsMovie() {
                     alt="poster"
                   />
                 )}
+
               </div>
               <div className="details-info">
                 {loading ? (
@@ -150,6 +152,7 @@ function DetailsMovie() {
                   } vote)`}</div>
                 </div>
 
+
                 <div className="watch">
                   <Link
                     className="watch-link"
@@ -169,6 +172,7 @@ function DetailsMovie() {
                   </span>
                   <span className="watch-link" title='Thêm vào danh mục của tôi'><AiOutlineHeart /></span>
                 </div>
+
               </div>
             </div>
           </div>

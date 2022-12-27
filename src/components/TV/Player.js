@@ -36,7 +36,7 @@ Player.defaultProps = {
       'captions',
       'settings',
       'pip',
-      'fullscreen'
+      'fullscreen',
     ],
     i18n: {
       restart: 'Restart',
@@ -65,8 +65,8 @@ Player.defaultProps = {
       speed: 'Speed',
       normal: 'Normal',
       quality: 'Quality',
-      loop: 'Loop'
-    }
+      loop: 'Loop',
+    },
   },
   sources: {
     type: 'video',
@@ -75,39 +75,39 @@ Player.defaultProps = {
         src: 'https://cdn.glitch.me/cbf2cfb4-aa52-4a1f-a73c-461eef3d38e8/1080.mp4',
         // src: video2,
         type: 'video/mp4',
-        size: 720
+        size: 720,
       },
       {
         src: 'https://cdn.glitch.me/cbf2cfb4-aa52-4a1f-a73c-461eef3d38e8/1080.mp4',
         // src: video1,
         type: 'video/mp4',
-        size: 360
-      }
-    ]
-    // tracks: [
-    //   {
-    //     kind: 'captions',
-    //     label: 'English',
-    //     srcLang: 'en',
-    //     // src: "https://cdn.jsdelivr.net/gh/naptestdev/video-examples@master/en.vtt",
-    //     src: 'https://cdn.jsdelivr.net/gh/naptestdev/video-examples@master/en.vtt',
-    //     default: true
-    //   },
-    //   {
-    //     kind: 'captions',
-    //     label: 'French',
-    //     srcLang: 'fr',
-    //     src: 'https://cdn.jsdelivr.net/gh/naptestdev/video-examples@master/fr.vtt'
-    //   }
-    // ]
-  }
+        size: 360,
+      },
+    ],
+    tracks: [
+      {
+        kind: 'captions',
+        label: 'English',
+        srcLang: 'en',
+        // src: "https://cdn.jsdelivr.net/gh/naptestdev/video-examples@master/en.vtt",
+        src: 'https://cdn.jsdelivr.net/gh/naptestdev/video-examples@master/en.vtt',
+        default: true,
+      },
+      {
+        kind: 'captions',
+        label: 'French',
+        srcLang: 'fr',
+        src: 'https://cdn.jsdelivr.net/gh/naptestdev/video-examples@master/fr.vtt',
+      },
+    ],
+  },
 };
 
 Player.propTypes = {
   options: PropTypes.object,
   sources: PropTypes.object,
   source: PropTypes.func,
-  destroy: PropTypes.func
+  destroy: PropTypes.func,
 };
 
 export default Player;

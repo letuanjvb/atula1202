@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import RecentlySlider from '../slider/recentlySlider';
 import SliderMovie from '../slider/sliderMovie';
-import SliderTv from '../slider/sliderTV';
+import SliderTv from '../slider/sliderTv';
 import { getMovieHistory } from '../../utils/localStro';
 // import Title from '../../components/Shared/Title';
 

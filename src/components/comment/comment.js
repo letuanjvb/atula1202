@@ -2,13 +2,14 @@ import React, { useMemo, useState } from 'react';
 import './comment.css';
 import 'boxicons';
 import { postComment } from '../../actions/fireStoreActions';
-import { useStore } from '../../stored';
 import Input from './input';
 import CommentItem from './commentItem';
 import useFireStore from '../../hooks/useFireStore';
+import { useAuth } from '@frontegg/react';
 
 const Comment = ({ movieId }) => {
-  const user = useStore((state) => state.user);
+  // const user = useStore((state) => state.user);
+  const { user } = useAuth();
   const [comment, setComment] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -20,12 +21,12 @@ const Comment = ({ movieId }) => {
     postComment({
       responseTo: null,
       movieId: movieId,
-      userId: user.uid,
-      userName: user.displayName ? user.displayName : user.email,
-      avatar: user.photoURL ? user.photoURL : '/user-non-avatar.png',
+      userId: user.accessToken, //user.uid,
+      userName: user?.name, //user.displayName ? user.displayName : user.email,
+      avatar: user?.profilePictureUrl, //user.photoURL ? user.photoURL : '/user-non-avatar.png',
       content: comment,
       reactions: [],
-      created_at: Date.now()
+      created_at: Date.now(),
     });
     setComment('');
     setLoading(false);
@@ -35,7 +36,7 @@ const Comment = ({ movieId }) => {
     () => ({
       fieldName: 'movieId',
       operator: '==',
-      compareValue: movieId
+      compareValue: movieId,
     }),
     [movieId]
   );
@@ -46,13 +47,23 @@ const Comment = ({ movieId }) => {
     <div className="comment">
       <h1 className="comment-title">Comments {document.length}</h1>
       <form onSubmit={handlePostComment}>
-        <Input user={user} comment={comment} setComment={setComment} loading={loading} />
+        <Input
+          user={user}
+          comment={comment}
+          setComment={setComment}
+          loading={loading}
+        />
 
         <div className="show-comment">
           {document.map((item) => {
             if (item.responseTo === null) {
               return (
-                <CommentItem movieId={movieId} item={item} key={item.id} listComment={document} />
+                <CommentItem
+                  movieId={movieId}
+                  item={item}
+                  key={item.id}
+                  listComment={document}
+                />
               );
             }
 

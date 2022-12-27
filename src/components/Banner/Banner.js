@@ -37,10 +37,10 @@ const Banner = () => {
         </h1>
         <div className="banner_buttons">
           <div className="banner_button_left">
-            <Link className="banner_button" to={`/player`}>
+            <Link className="banner_button" to={`/watchplayer`}>
               Trailer
             </Link>
-            <Link className="banner_button" to={`/player`}>
+            <Link className="banner_button" to={`/watchplayer`}>
               Xem phim
             </Link>
             <button
@@ -73,11 +73,14 @@ const Banner = () => {
           </div>
         </div>
         <h1 className="banner_description">
+
+
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
           faucibus, nulla sed tristique mattis, justo dui volutpat leo, ac
           dapibus dolor ligula ac urna. Quisque iaculis pretium purus, non
           efficitur neque sodales nec. Nunc ac mi purus. Phasellus condimentum
           mauris dui, sit amet tempor enim elementum scelerisque. 
+
         </h1>
       </div>
       <div className="banner_gradient" />

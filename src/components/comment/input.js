@@ -10,7 +10,8 @@ const Input = ({ user, comment, setComment, loading }) => {
       <img
         className="avatar"
         alt="avatar"
-        src={user.photoURL ? user.photoURL : '/user-non-avatar.png'}
+        src={user?.profilePictureUrl}
+        // src={user.photoURL ? user.photoURL : '/user-non-avatar.png'}
       />
 
       <div className="comment-control">
@@ -25,8 +26,12 @@ const Input = ({ user, comment, setComment, loading }) => {
           <div className="not-comment">
             <h3>
               You need{' '}
-              <Link to={`/login?redirect=${encodeURIComponent(location.pathname)}`}>login</Link> to
-              comment
+              <Link
+                to={`/login?redirect=${encodeURIComponent(location.pathname)}`}
+              >
+                login
+              </Link>{' '}
+              to comment
             </h3>
           </div>
         )}
@@ -34,10 +39,11 @@ const Input = ({ user, comment, setComment, loading }) => {
           <button
             style={{
               opacity: loading ? 0.6 : 1,
-              cursor: loading ? 'not-allowed' : 'pointer'
+              cursor: loading ? 'not-allowed' : 'pointer',
             }}
             disabled={loading}
-            className="send-icon">
+            className="send-icon"
+          >
             {loading ? 'Sending...' : 'Send'}
           </button>
         ) : null}

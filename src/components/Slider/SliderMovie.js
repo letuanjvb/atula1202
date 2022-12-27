@@ -64,7 +64,12 @@ const SliderMovie = ({ type }) => {
           <Button content={'Xem thêm'} />
         </Link>
       </div>
-      <Swiper navigation grabCursor={true} spaceBetween={20} slidesPerView={item}>
+      <Swiper
+        navigation
+        grabCursor={true}
+        spaceBetween={20}
+        slidesPerView={item}
+      >
         {!loading ? (
           movie.map((item) => (
             <SwiperSlide key={item.id}>
