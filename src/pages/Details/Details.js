@@ -13,7 +13,7 @@ import Loading from '../../components/loading/loading';
 import { addMovieLocal } from '../../utils/localStro';
 import { useStore } from '../../stored';
 import StarRatings from 'react-star-ratings';
-import Navside from '../../components/nav/navside';
+import Navside from '../../components/nav/navSide';
 import Footer from '../../components/footer/footer';
 import { AiOutlineHeart } from 'react-icons/ai';
 import './details.css';
@@ -79,10 +79,8 @@ function DetailsMovie() {
 
   return (
     <div>
-
       <Navside />
       <div className="bodyside">
-        <Title title={`${data.name || data.title}`} />
         <div
           className={`details ${loading ? 'skeleton' : ''}`}
           style={{
@@ -99,7 +97,6 @@ function DetailsMovie() {
                     alt="poster"
                   />
                 )}
-
               </div>
               <div className="details-info">
                 {loading ? (
@@ -152,7 +149,6 @@ function DetailsMovie() {
                   } vote)`}</div>
                 </div>
 
-
                 <div className="watch">
                   <Link
                     className="watch-link"
@@ -177,7 +173,6 @@ function DetailsMovie() {
                     <AiOutlineHeart />
                   </span>
                 </div>
-
               </div>
             </div>
           </div>
