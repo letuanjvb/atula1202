@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Cast from '../../components/cast/cast';
 import Simular from '../../components/simular/simular';
 import ModalTrailer from '../../components/trailer/modalTrailer';
-import Title from '../../components/shared/tittle';
+
 import { toast } from 'react-toastify';
 import { addMovieFromPlaylist } from '../../actions/fireStoreActions';
 import Loading from '../../components/loading/loading';
@@ -50,7 +50,7 @@ function DetailsMovie() {
         id: data?.id,
         poster_path: data?.poster_path,
         media_type: media_type,
-        title: data?.name || data?.title,
+
         viewAt: Date.now(),
       });
     }
@@ -76,7 +76,6 @@ function DetailsMovie() {
 
   return (
     <div>
-      <Title title={`${data.name || data.title}`} />
       <div
         className={`details ${loading ? 'skeleton' : ''}`}
         style={{

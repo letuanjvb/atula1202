@@ -16,7 +16,11 @@ const Banner = () => {
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(requests.fetchNeflixOriginal);
-      setMovie(request.data.results[Math.floor(Math.random() * request.data.results.length - 1)]);
+      setMovie(
+        request.data.results[
+          Math.floor(Math.random() * request.data.results.length - 1)
+        ]
+      );
       return request;
     }
 
@@ -30,24 +34,28 @@ const Banner = () => {
         <h1 className="banner_title"> Avengers - Endgame </h1>
         <div className="banner_buttons">
           <div className="banner_button_left">
-            <Link className="banner_button" to={`/player`}>
+            <Link className="banner_button" to={`/watchplayer`}>
               Trailer
             </Link>
-            <Link className="banner_button" to={`/player`}>
+            <Link className="banner_button" to={`/watchplayer`}>
               Xem phim
             </Link>
             <button
               className="banner_button1"
               onClick={() => history('/filminfo')}
               onMouseEnter={() => setIsShown(true)}
-              onMouseLeave={() => setIsShown(false)}>
+              onMouseLeave={() => setIsShown(false)}
+            >
               i
             </button>
             {isShown && (
               <div className="banner_button_hover">
                 <h1>Avengers - Endgame</h1>
                 <div>Thời lượng: 181 Phút</div>
-                <div>Thể loại: Phim Hành Động, Phim Viễn Tưởng, Phim Phiêu Lưu, Phim Chiếu Rạp</div>
+                <div>
+                  Thể loại: Phim Hành Động, Phim Viễn Tưởng, Phim Phiêu Lưu,
+                  Phim Chiếu Rạp
+                </div>
                 <div>Điểm IMDb:8,7</div>
                 <div>Năm Phát Hành: 2019</div>
                 <div>Quốc gia: Phim Âu Mỹ</div>
@@ -63,11 +71,12 @@ const Banner = () => {
           <div className="banner_gradient" />
         </div>
         <h1 className="banner_description">
-          Cú búng tay của Thanos đã khiến toàn bộ dân số biến mất một nửa. Các siêu anh hùng đánh
-          mất bạn bè, người thân và đánh mất cả chính mình. Bộ sáu Avengers đầu tiên tứ tán. Iron
-          Man kẹt lại ngoài không gian, Hawkeye mất tích. Thor, Captain America, Hulk và Black Widow
-          đều chìm trong nỗi đau vô tận vì mất đi những người thân yêu. Họ phải làm gì để cứu vãn
-          mọi chuyện ở Avengers: Hồi Kết?
+          Cú búng tay của Thanos đã khiến toàn bộ dân số biến mất một nửa. Các
+          siêu anh hùng đánh mất bạn bè, người thân và đánh mất cả chính mình.
+          Bộ sáu Avengers đầu tiên tứ tán. Iron Man kẹt lại ngoài không gian,
+          Hawkeye mất tích. Thor, Captain America, Hulk và Black Widow đều chìm
+          trong nỗi đau vô tận vì mất đi những người thân yêu. Họ phải làm gì để
+          cứu vãn mọi chuyện ở Avengers: Hồi Kết?
         </h1>
       </div>
       <div className="banner_fadeBottom"></div>

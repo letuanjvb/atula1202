@@ -9,6 +9,7 @@ import ProfileScreen from './pages/profile/profileScreen';
 import Loading from './components/loading/loading';
 import { useStore } from './stored';
 import { useAuth, useLoginWithRedirect, ContextHolder } from '@frontegg/react';
+import Watchplayer from './components/tv/watchplayer';
 
 //pages
 
@@ -86,7 +87,7 @@ function App() {
         <Route path="/watch/movie/:id" element={<WatchMovie />}></Route>
         <Route path="/player" element={<Player />}></Route>
         <Route path="/navside" element={<Navside />}></Route>
-        <Route path="/watch/movie/:id" element={<WatchMovie />}></Route>
+        <Route path="/watchplayer" element={<Watchplayer />}></Route>
       </Routes>
       {/* )} */}
     </div>
