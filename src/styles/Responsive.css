@@ -44,6 +44,9 @@
   .watch-tv-season-img {
     width: 30%;
   }
+  .banner {
+    display: none;
+  }
 
   /* loginScreen responsive */
   .loginScreen {
@@ -87,6 +90,9 @@
   }
   .loginScreen_input {
     visibility: hidden;
+  }
+  .bodyside{
+    margin-top: 30%;
   }
 }
 
@@ -164,6 +170,29 @@
   .loginScreen_animationcard_videobg1 img{
     width: 12rem;
   }
+  .banner_contents{
+    margin-top: -500px;
+    width: 80%;
+  }
+  .bodyside{
+    margin-top: 10%;
+    margin-left: 0;
+  }
+  .banner_button_hover {
+    visibility: hidden;
+  }
+  .banner_button_right {
+    visibility: hidden;
+  }
+  .banner_title{
+    font-size: 1.6rem;
+  }
+  .banner_button {
+    font-size: 0.6rem;
+  }
+  .banner_description {
+    font-size: 0.6rem;
+  }
 }
 
 /* Tablet and Mobile */
@@ -206,13 +235,10 @@
   .watch-tv-other-season {
     margin-top: 40px;
   }
-  .banner {
-    display: none;
-  }
 }
 
 @media (min-width: 1200px) {
   .banner {
-    aspect-ratio: 2/1;
+    aspect-ratio: 16/9;
   }
 }

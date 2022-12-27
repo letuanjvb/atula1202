@@ -4,13 +4,11 @@ import './signInScreen.css';
 import { Auth } from '../../config/firebase';
 import { auth, googleProvider } from '../../config/firebase';
 import { addUser } from '../../actions/fireStoreActions';
-// import { toast } from 'react-toastify';
 import { useStore } from '../../stored';
 import { Link } from 'react-router-dom';
 import SignUpScreen from './signUpScreen';
 
 const SignInScreen = () => {
-  //Chưa học useRef
   const { setLoading, loading } = useStore((state) => state);
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
@@ -18,7 +16,6 @@ const SignInScreen = () => {
 
   const signIn = (e) => {
     e.preventDefault();
-    // xác thực khi đăng nhập
     Auth.signInWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
       .then((authUser) => {
         console.log(authUser);
@@ -27,22 +24,7 @@ const SignInScreen = () => {
         alert(error.message);
       });
   };
-  // const register = (e) => {
-  //   // chặn hoạt động mặc định của trình duyệt
-  //   e.preventDefault();
-  //   // xác thực khi đăng ký
-
-  //   Auth.createUserWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
-  //     .then((authUser) => {
-  //       console.log(authUser);
-  //     })
-  //     .catch((error) => {
-  //       alert(error.message);
-  //     });
-  // };
-
-  //register
-
+  
   const handleLogin = async (Provider) => {
     setLoading(true);
     try {
@@ -53,7 +35,6 @@ const SignInScreen = () => {
       }
       setLoading(false);
     } catch (error) {
-      // toast.error(error.message);
       setLoading(false);
     }
   };
@@ -85,7 +66,7 @@ const SignInScreen = () => {
             className={`login-form-button login-form-google ${loading ? 'disableButton' : ''}`}
             onClick={() => handleLogin(googleProvider)}
             disabled={loading}>
-            <box-icon name="google" type="logo" flip="vertical" color="#f7eeee"></box-icon>
+            <box-icon name="google" type="logo" flip="vertical" color="white"></box-icon>
             <span>Đăng nhập bằng Google</span>
           </button>
         </form>

@@ -1,11 +1,14 @@
 import React from "react";
-import { FadingBalls } from "react-cssfx-loading";
+import { Coin } from "react-cssfx-loading";
 import "./loading.css";
 
 const Loading = () => {
   return (
     <div className="ovelay">
-      <FadingBalls color="rgb(231, 76, 60)" />
+      <Coin color="red" />
+      <Coin color="red" />
+      <Coin color="red" />
+      <Coin color="red" />
     </div>
   );
 };

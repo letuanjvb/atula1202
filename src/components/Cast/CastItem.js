@@ -7,8 +7,8 @@ function CastItem({ data }) {
     <div className="cast-item">
       <div
         style={{
-          aspectRatio: "9/16",
-          backgroundColor: "#222",
+          aspectRatio: "3/4",
+          backgroundColor: "black",
           borderRadius: "10px",
         }}
       >

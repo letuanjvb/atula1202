@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import { API_KEY, BASE_URL } from "../../utils/constans";
 import CastItem from "./castItem";
 import "./cast.css";
@@ -34,7 +34,7 @@ function Cast() {
   return (
     <>
       <h3 className="cast-title">Cast</h3>
-      <div className="cast grid-gap-20px-20px grid-layout">
+      <div className="cast grid-gap-1rem-1rem grid-layout">
         {loading ? (
           <>
             <Skeleton />
