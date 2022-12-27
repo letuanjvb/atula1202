@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from '../../components/banner/banner';
 import './homeScreen.css';
-import Navside from '../../components/nav/navSide';
+import Navside from '../../components/nav/navside';
 import Footer from '../../components/footer/footer';
 import Row from '../../components/row/row';
 // import Title from '../../components/Shared/Title';

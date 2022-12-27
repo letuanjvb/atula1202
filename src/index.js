@@ -1,26 +1,32 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { Provider } from 'react-redux';
-import { store } from './app/store';
+// import { Provider } from 'react-redux';
+// import { store } from './app/store';
 import App from './App';
-import { ToastContainer } from 'react-toastify';
+
 import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter } from 'react-router-dom';
-import './styles/App.css';
+import './styles/app.css';
 import './styles/responsive.css';
+import { FronteggProvider } from '@frontegg/react';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
+const contextOptions = {
+  baseUrl: 'https://app-1ivhele6gdhi.frontegg.com',
+  clientId: 'df7b3319-822f-4b17-9fc9-38a91abe056b',
+};
 
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <ToastContainer />
+    {/* <Provider store={store}> */}
+    <BrowserRouter>
+      <FronteggProvider contextOptions={contextOptions} hostedLoginBox={true}>
         <App />
-      </BrowserRouter>
-    </Provider>
+      </FronteggProvider>
+    </BrowserRouter>
+    {/* </Provider> */}
   </React.StrictMode>
 );
 

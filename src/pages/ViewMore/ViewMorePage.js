@@ -6,7 +6,7 @@ import Skeleton from '../../components/skeleton/skeleton';
 import Title from '../../components/shared/tittle';
 import './viewMorePage.css';
 import 'boxicons';
-import Navside from '../../components/nav/navSide';
+import Navside from '../../components/nav/navside';
 
 function ViewMorePage() {
   const { media_type, type } = useParams();
@@ -19,7 +19,7 @@ function ViewMorePage() {
   const scrollTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   };
 
@@ -114,7 +114,12 @@ function ViewMorePage() {
         </div>
 
         <div className="scrollTop" onClick={scrollTop}>
-          <box-icon size="sm" color="white" type="solid" name="to-top"></box-icon>
+          <box-icon
+            size="sm"
+            color="white"
+            type="solid"
+            name="to-top"
+          ></box-icon>
         </div>
       </div>
     </div>

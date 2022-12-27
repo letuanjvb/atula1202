@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@frontegg/react": "^5.0.16",
     "@mui/icons-material": "^5.10.16",
     "@mui/material": "^5.10.16",
     "@mui/styled-engine-sc": "^5.10.16",
@@ -25,7 +26,7 @@
     "react-icons": "^4.7.1",
     "react-redux": "^8.0.5",
     "react-router": "^6.5.0",
-    "react-router-dom": "^6.4.4",
+    "react-router-dom": "^6.6.1",
     "react-scripts": "^5.0.1",
     "react-star-ratings": "^2.3.0",
     "react-toastify": "^9.1.1",

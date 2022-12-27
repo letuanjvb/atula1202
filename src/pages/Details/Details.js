@@ -51,7 +51,7 @@ function DetailsMovie() {
         poster_path: data?.poster_path,
         media_type: media_type,
         title: data?.name || data?.title,
-        viewAt: Date.now()
+        viewAt: Date.now(),
       });
     }
   }, [data, media_type]);
@@ -80,8 +80,9 @@ function DetailsMovie() {
       <div
         className={`details ${loading ? 'skeleton' : ''}`}
         style={{
-          backgroundImage: `url(https://image.tmdb.org/t/p/original/${data?.backdrop_path})`
-        }}>
+          backgroundImage: `url(https://image.tmdb.org/t/p/original/${data?.backdrop_path})`,
+        }}
+      >
         <div className="container">
           <div className="details-container">
             <div className={`details-poster ${loading ? 'skeleton' : ''}`}>
@@ -95,9 +96,13 @@ function DetailsMovie() {
             </div>
             <div className="details-info">
               {loading ? (
-                <h1 className="mr-bottom-20px skeleton skeleton-text h-36px">{''}</h1>
+                <h1 className="mr-bottom-20px skeleton skeleton-text h-36px">
+                  {''}
+                </h1>
               ) : (
-                <h1 className={`details-info-title`}>{data.name || data.title}</h1>
+                <h1 className={`details-info-title`}>
+                  {data.name || data.title}
+                </h1>
               )}
               {loading ? (
                 <>
@@ -122,7 +127,9 @@ function DetailsMovie() {
               )}
               <div className="genres">
                 {data.genres &&
-                  data.genres.map((item) => <Button key={item.id} content={item.name} />)}
+                  data.genres.map((item) => (
+                    <Button key={item.id} content={item.name} />
+                  ))}
               </div>
               <div className="ratings">
                 <StarRatings
@@ -133,15 +140,20 @@ function DetailsMovie() {
                   starDimension="15px"
                   starSpacing="2px"
                 />
-                <div className="ratings-count">{`(${data.vote_count || 0} vote)`}</div>
+                <div className="ratings-count">{`(${
+                  data.vote_count || 0
+                } vote)`}</div>
               </div>
 
               <div className="watch">
                 <Link
                   className="watch-link"
                   to={
-                    media_type === 'tv' ? `/watch/tv/${id}/season/1/esp/1` : `/watch/movie/${id}`
-                  }>
+                    media_type === 'tv'
+                      ? `/watch/tv/${id}/season/1/esp/1`
+                      : `/watch/movie/${id}`
+                  }
+                >
                   Watch Now
                 </Link>
                 <span className="watch-link" onClick={() => setShowModal(true)}>
@@ -159,14 +171,21 @@ function DetailsMovie() {
       <div className="container">
         <p className="homepage">
           Homepage:{' '}
-          <a target="_blank" rel="noreferrer" className="homepage-link" href={data.homepage}>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            className="homepage-link"
+            href={data.homepage}
+          >
             {data.homepage}
           </a>
         </p>
 
         <Cast />
         <Simular />
-        {showModal ? <ModalTrailer show={showModal} setShow={setShowModal} /> : null}
+        {showModal ? (
+          <ModalTrailer show={showModal} setShow={setShowModal} />
+        ) : null}
       </div>
 
       {loadingAddMovie && <Loading />}

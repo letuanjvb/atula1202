@@ -1,6 +1,6 @@
 import React from 'react';
 import './profileScreen.css';
-import Navside from '../../components/nav/navSide';
+import Navside from '../../components/nav/navside';
 import Footer from '../../components/footer/footer';
 // import { auth } from '../Library/firebase';
 import { useStore } from '../../stored';
@@ -18,7 +18,10 @@ const ProfileScreen = () => {
           <div className="profileScreen_info">
             <div className="profileScreen_details">
               <h2>{user.email}</h2>
-              <img alt="avatar" src={user.photoURL ? user?.photoURL : '/user-non-avatar.png'} />
+              <img
+                alt="avatar"
+                src={user.photoURL ? user?.photoURL : '/user-non-avatar.png'}
+              />
               <h1>{user.displayName ? user?.displayName : 'default'}</h1>
             </div>
           </div>
