@@ -50,11 +50,17 @@
   font-weight: 600;
   color: #fff;
   background-color: transparent;
-  border-left: 1px solid #3498db;
-  cursor: pointer;
-  background-color: #3498db;
+  border-left: 1px solid red;
+  background-color: red;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+.comment-control .send-icon:hover {
+  cursor: pointer;
+  background-color: white;
+  color: red;
+  border-left: 1px solid white;
+  transition: 0.3s;
 }
 
 .show-comment {

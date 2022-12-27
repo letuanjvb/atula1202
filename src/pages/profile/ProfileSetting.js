@@ -30,9 +30,9 @@ const UserSetting = () => {
               <div className="profileScreen_content1">Không có thông tin thanh toán</div>
             </div>
             <div className="profileScreen_footer">
-              <button className="profileScreen_content1">Thay đổi email</button>
-              <button className="profileScreen_content1">Thay đổi mật khẩu</button>
-              <button className="profileScreen_content1">Thêm số điện thoại</button>
+              <div className="profileScreen_content">Thay đổi email</div>
+              <div className="profileScreen_content">Thay đổi mật khẩu</div>
+              <div className="profileScreen_content">Thêm số điện thoại</div>
             </div>
           </div>
           <div className="profileScreen_article">

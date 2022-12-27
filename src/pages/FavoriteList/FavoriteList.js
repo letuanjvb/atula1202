@@ -39,7 +39,7 @@ const FavoriteList = () => {
         <h1 className="favorite-title">Favorite Movie</h1>
 
         {favoriteList.length > 0 ? (
-          <div className="grid-layout grid-gap-20px-20px">
+          <div className="grid-layout grid-gap-1rem-1rem">
             {favoriteList &&
               favoriteList.map((item) => (
                 <div key={item.id} className="image-favorite">

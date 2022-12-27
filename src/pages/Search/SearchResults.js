@@ -5,6 +5,7 @@ import Skeleton from '../../components/skeleton/skeleton';
 import { useSearchParams } from '../../hooks/useSearchParams';
 import { BASE_URL, API_KEY } from '../../utils/constans';
 import Title from '../../components/shared/tittle';
+import Navside from '../../components/nav/navSide';
 
 function SearchResults() {
   const searchParams = useSearchParams();
@@ -26,7 +27,9 @@ function SearchResults() {
   const searchKeywordforUser = useCallback(
     (keyword) => {
       if (keyword.trim() === '') return;
-      fetch(`${BASE_URL}/search/multi?api_key=${API_KEY}&query=${keyword}&page=${page}`)
+      fetch(
+        `${BASE_URL}/search/multi?api_key=${API_KEY}&query=${keyword}&page=${page}`
+      )
         .then((res) => res.json())
         .then((data) => {
           setTotalPage(data.total_pages);
@@ -55,40 +58,46 @@ function SearchResults() {
   }
 
   return (
-    <div className="container">
-      {/* Change document title */}
-      <Title title={`Results for ${keyword}`} />
+    <div className=''>
+      <Navside />
+      <div className="container bodyside">
+        {/* Change document title */}
+        <Title title={`Tìm kiếm: ${keyword}`} />
 
-      <div className="searchResults">
-        <h1 className="searchResults-title">Results for {`"${keyword}"`}</h1>
-        <div className="grid-layout grid-gap-20px-20px">
-          {!loading ? (
-            results.map((result) => (
-              <Link key={result.id} to={`/details/${result.media_type}/${result.id}`}>
-                <MovieItem data={result} />
-              </Link>
-            ))
-          ) : (
-            <>
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-            </>
-          )}
+        <div className="searchResults">
+          <h1 className="searchResults-title">Kết quả: {`"${keyword}"`}</h1>
+          <div className="grid-layout grid-gap-1rem-1rem">
+            {!loading ? (
+              results.map((result) => (
+                <Link
+                  key={result.id}
+                  to={`/details/${result.media_type}/${result.id}`}
+                >
+                  <MovieItem data={result} />
+                </Link>
+              ))
+            ) : (
+              <>
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+              </>
+            )}
+          </div>
         </div>
+        {page < totalPage ? (
+          <div onClick={LoadMore} className="load-more">
+            <button className="load-more-button">Load More</button>
+          </div>
+        ) : null}
       </div>
-      {page < totalPage ? (
-        <div onClick={LoadMore} className="load-more">
-          <button className="load-more-button">Load More</button>
-        </div>
-      ) : null}
     </div>
   );
 }

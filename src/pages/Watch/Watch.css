@@ -1,11 +1,11 @@
 .watch-movie-container {
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  margin-top: 4rem;
   animation: fadeIn 0.5s linear;
   flex-wrap: wrap;
-  margin-top: 80px;
-  margin-bottom: 40px;
+  margin-left: 4rem;
+  margin-bottom: 2rem;
 }
 
 .watch-wrap {
@@ -14,11 +14,11 @@
 
 .watch-movie {
   aspect-ratio: 16/9;
-  background-color: #222;
+  background-color: black;
 }
 
 .simularMovie {
-  width: 22%;
+  width: 100%;
 }
 
 .movie-name {
@@ -39,16 +39,17 @@
 
 .watch-tv-container {
   display: flex;
-  margin-top: 30px;
+  margin-top: 4rem;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 80px;
+  margin-bottom: 2rem;
+  margin-left: 4rem;
 }
 
 .watch-tv {
   width: 100%;
   aspect-ratio: 16/9;
-  background-color: #222;
+  background-color: black;
 }
 
 .watch-tv-in4 {
@@ -79,7 +80,7 @@
   width: 100%;
   padding-top: 0;
   margin-top: 0;
-  aspect-ratio: 414/599;
+  aspect-ratio: 3/4;
 }
 
 .info-esp-season {

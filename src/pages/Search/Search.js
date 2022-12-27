@@ -1,13 +1,15 @@
-import React, { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import Title from "../../components/shared/tittle";
-import Tippy from "@tippyjs/react/headless";
-import ListResults from "../../components/result/listResults";
-import { API_KEY, BASE_URL } from "../../utils/constans";
-import "./search.css";
+import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Title from '../../components/shared/tittle';
+import Tippy from '@tippyjs/react/headless';
+import ListResults from '../../components/result/listResults';
+import { API_KEY, BASE_URL } from '../../utils/constans';
+import Navside from '../../components/nav/navSide';
+import Footer from '../../components/footer/footer';
+import './search.css';
 
 function Search() {
-  const [keyWord, setKeyWord] = useState("");
+  const [keyWord, setKeyWord] = useState('');
   const [result, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const timeoutRef = useRef(null);
@@ -42,41 +44,47 @@ function Search() {
 
   const onSubmitForm = (e) => {
     e.preventDefault();
-    if (keyWord.trim() === "") return;
+    if (keyWord.trim() === '') return;
 
     navigate(`/results?q=${keyWord}`);
   };
 
   return (
-    <form onSubmit={onSubmitForm} className="search">
-      {/* Change document title */}
-      <Title title={"Search movies and tv-shows"} />
+    <div>
+      <Navside />
+      <div className="bodyside">
+        <form onSubmit={onSubmitForm} className="search">
+          {/* Change document title */}
+          <Title title={'Search movies and tv-shows'} />
 
-      <Tippy
-        interactive
-        placement="bottom-start"
-        render={(attrs) => (
-          <ListResults
-            keyWord={keyWord}
-            loading={loading}
-            results={result}
-            {...attrs}
-          />
-        )}
-        visible={result.length > 0}
-      >
-        <div className="search-input">
-          <input
-            onChange={onChangeInput}
-            value={keyWord}
-            placeholder="Search...."
-            className="search-text"
-            type="text"
-          />
-          <input className="search-submit" type="submit" value="Search" />
-        </div>
-      </Tippy>
-    </form>
+          <Tippy
+            interactive
+            placement="bottom-start"
+            render={(attrs) => (
+              <ListResults
+                keyWord={keyWord}
+                loading={loading}
+                results={result}
+                {...attrs}
+              />
+            )}
+            visible={result.length > 0}
+          >
+            <div className="search-input">
+              <input
+                onChange={onChangeInput}
+                value={keyWord}
+                placeholder="Tìm kiếm tại đây"
+                className="search-text"
+                type="text"
+              />
+              <input className="search-submit" type="submit" value="Search" />
+            </div>
+          </Tippy>
+        </form>
+        <Footer />
+      </div>
+    </div>
   );
 }
 
