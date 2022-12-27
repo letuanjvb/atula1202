@@ -1,7 +1,7 @@
 import React from 'react';
 import './profileSetting.css';
 
-import Navside from '../../components/nav/navside';
+import Navside from '../../components/nav/navSide';
 import Footer from '../../components/footer/footer';
 import { useStore } from '../../stored';
 
@@ -34,11 +34,9 @@ const UserSetting = () => {
               </div>
             </div>
             <div className="profileScreen_footer">
-
               <div className="profileScreen_content">Thay đổi email</div>
               <div className="profileScreen_content">Thay đổi mật khẩu</div>
               <div className="profileScreen_content">Thêm số điện thoại</div>
-
             </div>
           </div>
           <div className="profileScreen_article">

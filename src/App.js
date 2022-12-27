@@ -20,7 +20,7 @@ import SearchResults from './pages/search/searchResults';
 import WatchTv from './pages/watch/watch';
 import WatchMovie from './pages/watch/watchMovie';
 import Player from './components/tv/player';
-import Navside from './components/nav/navside';
+import Navside from './components/nav/navSide';
 import ViewMorePage from './pages/viewMore/viewMorePage';
 
 function App() {

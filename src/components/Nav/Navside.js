@@ -54,21 +54,27 @@ const Navside = () => {
           <li className="nav-item">
             <div className="nav-link">
               <MdOutlineMovieFilter className="nav-link-icon" />
-              <span className="link-text" onClick={() => history('/')}>Phim lẻ</span>
+              <span className="link-text" onClick={() => history('/')}>
+                Phim lẻ
+              </span>
             </div>
           </li>
 
           <li className="nav-item">
             <div className="nav-link">
               <RiMovie2Line className="nav-link-icon" />
-              <span className="link-text" onClick={() => history('/')}>TV series</span>
+              <span className="link-text" onClick={() => history('/')}>
+                TV series
+              </span>
             </div>
           </li>
 
           <li className="nav-item">
             <div className="nav-link">
               <AiOutlineFire className="nav-link-icon" />
-              <span className="link-text" onClick={() => history('/')}>Mới và nổi bật</span>
+              <span className="link-text" onClick={() => history('/')}>
+                Mới và nổi bật
+              </span>
             </div>
           </li>
 
@@ -99,11 +105,9 @@ const Navside = () => {
             </div>
           </li>
           <li className="nav-item">
-            <div className="nav-link" id='hide'>
-              <FaSignOutAlt className="nav-link-icon" onClick={() => auth.signOut()}/>
-              <span className="link-text">
-                Hehe u cant see me
-              </span>
+            <div className="nav-link" id="hide">
+              <FaSignOutAlt className="nav-link-icon" onClick={handleClick} />
+              <span className="link-text">Hehe u cant see me</span>
             </div>
           </li>
           <li className="nav-item">
@@ -116,7 +120,6 @@ const Navside = () => {
               </span>
             </div>
           </li>
-
         </ul>
       </nav>
     </div>

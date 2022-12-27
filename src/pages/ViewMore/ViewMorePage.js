@@ -6,7 +6,7 @@ import Skeleton from '../../components/skeleton/skeleton';
 import Title from '../../components/shared/tittle';
 import './viewMorePage.css';
 import 'boxicons';
-import Navside from '../../components/nav/navside';
+import Navside from '../../components/nav/navSide';
 
 function ViewMorePage() {
   const { media_type, type } = useParams();

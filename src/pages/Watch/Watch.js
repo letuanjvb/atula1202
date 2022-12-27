@@ -5,12 +5,11 @@ import Simular from '../../components/simular/simular';
 import Title from '../../components/shared/tittle';
 import Comment from '../../components/comment/comment';
 
-import SeasonItem from '../../components/TV/seasonItem';
-import TVInfo from '../../components/TV/TVInfo';
-import EmbedVideoTv from '../../components/TV/embedVideoTv';
+import SeasonItem from '../../components/tv/seasonItem';
+import TVInfo from '../../components/tv/tvInfo';
+import EmbedVideoTv from '../../components/tv/embedVideoTv';
 import Navside from '../../components/nav/navSide';
 import Footer from '../../components/footer/footer';
-
 
 function Watch() {
   const { esp, season, id } = useParams();
@@ -61,7 +60,6 @@ function Watch() {
   }, [esp, season, id]);
 
   return (
-
     <div>
       <Navside />
       <div className="container bodyside">
@@ -74,7 +72,6 @@ function Watch() {
             <TVInfo nameTv={nameTv} espCurrent={espCurrent} />
             <Comment movieId={id} />
           </div>
-
 
           <div className="watch-tv-other-season">
             {seasonData.map((item) => {

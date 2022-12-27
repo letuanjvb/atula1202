@@ -79,10 +79,8 @@ function DetailsMovie() {
 
   return (
     <div>
-
       <Navside />
       <div className="bodyside">
-        <Title title={`${data.name || data.title}`} />
         <div
           className={`details ${loading ? 'skeleton' : ''}`}
           style={{
@@ -99,7 +97,6 @@ function DetailsMovie() {
                     alt="poster"
                   />
                 )}
-
               </div>
               <div className="details-info">
                 {loading ? (
@@ -152,7 +149,6 @@ function DetailsMovie() {
                   } vote)`}</div>
                 </div>
 
-
                 <div className="watch">
                   <Link
                     className="watch-link"
@@ -170,9 +166,13 @@ function DetailsMovie() {
                   >
                     Trailer
                   </span>
-                  <span className="watch-link" title='Thêm vào danh mục của tôi'><AiOutlineHeart /></span>
+                  <span
+                    className="watch-link"
+                    title="Thêm vào danh mục của tôi"
+                  >
+                    <AiOutlineHeart />
+                  </span>
                 </div>
-
               </div>
             </div>
           </div>
