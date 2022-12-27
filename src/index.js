@@ -1,5 +1,5 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
 // import { Provider } from 'react-redux';
 // import { store } from './app/store';
 import App from './App';
@@ -12,12 +12,13 @@ import './styles/responsive.css';
 import { FronteggProvider } from '@frontegg/react';
 
 const container = document.getElementById('root');
-const root = createRoot(container);
+
 const contextOptions = {
   baseUrl: 'https://app-1ivhele6gdhi.frontegg.com',
   clientId: 'df7b3319-822f-4b17-9fc9-38a91abe056b',
 };
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <Provider store={store}> */}
@@ -27,7 +28,8 @@ root.render(
       </FronteggProvider>
     </BrowserRouter>
     {/* </Provider> */}
-  </React.StrictMode>
+  </React.StrictMode>,
+  container
 );
 
 reportWebVitals();

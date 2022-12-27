@@ -29,12 +29,12 @@ function App() {
   const { user, isAuthenticated } = useAuth();
   const loginWithRedirect = useLoginWithRedirect();
 
-  // // Uncomment this to redirect to login automatically
-  // useEffect(() => {
-  //   if (!isAuthenticated) {
-  //     loginWithRedirect();
-  //   }
-  // }, [isAuthenticated, loginWithRedirect]);
+  // Uncomment this to redirect to login automatically
+  useEffect(() => {
+    if (!isAuthenticated) {
+      loginWithRedirect();
+    }
+  }, [isAuthenticated, loginWithRedirect]);
 
   // useEffect(() => {
   //   // lưu thay đổi vào bộ nhớ cục bộ của trình duyệt
@@ -65,30 +65,30 @@ function App() {
     <div className="App">
       {/* <HomeScreen /> */}
       {/* bat buoc phai co tai khoan, neu khong se back ve Login */}
-      {!user ? (
+      {/* {!user ? (
         <LoginScreen />
-      ) : (
-        <Routes>
-          <Route path="/profile" element={<ProfileScreen />}></Route>
-          <Route path="/" element={<HomeScreen />}></Route>
-          <Route path="/usersetting" element={<UserSetting />}></Route>
-          <Route path="/search" element={<Search />}></Route>
-          <Route path="/results" element={<SearchResults />}></Route>
-          <Route path="/:media_type/:type" element={<ViewMorePage />}></Route>
-          <Route
-            path="/details/:media_type/:id"
-            element={<DetailsMovie />}
-          ></Route>
-          <Route
-            path="/watch/tv/:id/season/:season/esp/:esp"
-            element={<WatchTv />}
-          ></Route>
-          <Route path="/watch/movie/:id" element={<WatchMovie />}></Route>
-          <Route path="/player" element={<Player />}></Route>
-          <Route path="/navside" element={<Navside />}></Route>
-          <Route path="/watch/movie/:id" element={<WatchMovie />}></Route>
-        </Routes>
-      )}
+      ) : ( */}
+      <Routes>
+        <Route path="/profile" element={<ProfileScreen />}></Route>
+        <Route path="/" element={<HomeScreen />}></Route>
+        <Route path="/usersetting" element={<UserSetting />}></Route>
+        <Route path="/search" element={<Search />}></Route>
+        <Route path="/results" element={<SearchResults />}></Route>
+        <Route path="/:media_type/:type" element={<ViewMorePage />}></Route>
+        <Route
+          path="/details/:media_type/:id"
+          element={<DetailsMovie />}
+        ></Route>
+        <Route
+          path="/watch/tv/:id/season/:season/esp/:esp"
+          element={<WatchTv />}
+        ></Route>
+        <Route path="/watch/movie/:id" element={<WatchMovie />}></Route>
+        <Route path="/player" element={<Player />}></Route>
+        <Route path="/navside" element={<Navside />}></Route>
+        <Route path="/watch/movie/:id" element={<WatchMovie />}></Route>
+      </Routes>
+      {/* )} */}
     </div>
   );
 }
