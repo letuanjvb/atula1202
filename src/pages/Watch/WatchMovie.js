@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { API_KEY, BASE_URL } from '../../utils/constans';
-import SimularColumn from '../../components/simular/simularColumn';
-import Title from '../../components/shared/tittle';
+import SimularColumn from '../../components/Simular/simularColumn';
+import Title from '../../components/shared/Tittle';
 import Comment from '../../components/comment/comment';
-import EmbedVideoMovie from '../../components/movie/embedVideoMovie';
-import MovieInfo from '../../components/movie/movieInfo';
-import Navside from '../../components/nav/navSide';
-import Footer from '../../components/footer/footer';
+import EmbedVideoMovie from '../../components/Movie/embedVideoMovie';
+import MovieInfo from '../../components/Movie/movieInfo';
+import Navside from '../../components/Nav/navSide';
+import Footer from '../../components/Footer/footer';
 import './watch.css';
 // import Player from '../../components/TV/Player';
 

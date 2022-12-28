@@ -5,13 +5,13 @@ import SwiperCore, { Navigation } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
 import { useEffect, useState } from 'react';
-import Button from '../button/button';
+import Button from '../Button/button';
 import useInnerWidth from '../../hooks/useInnerWidth';
-import Skeleton from '../skeleton/skeleton';
+import Skeleton from '../Skeleton/skeleton';
 import './slider.css';
 import { API_KEY, BASE_URL } from '../../utils/constans';
 import { Link } from 'react-router-dom';
-import MovieItem from '../movie/movieItem';
+import MovieItem from '../Movie/movieItem';
 
 const SliderMovie = ({ type }) => {
   SwiperCore.use([Navigation]);

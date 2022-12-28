@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { BASE_URL, API_KEY } from '../../utils/constans';
-import Simular from '../../components/simular/simular';
-import Title from '../../components/shared/tittle';
+import Simular from '../../components/Simular/simular';
+import Title from '../../components/shared/Tittle';
 import Comment from '../../components/comment/comment';
 
 import SeasonItem from '../../components/tv/seasonItem';
 import TVInfo from '../../components/tv/tvInfo';
 import EmbedVideoTv from '../../components/tv/embedVideoTv';
-import Navside from '../../components/nav/navSide';
-import Footer from '../../components/footer/footer';
+import Navside from '../../components/Nav/navSide';
+import Footer from '../../components/Footer/footer';
 
 function Watch() {
   const { esp, season, id } = useParams();

@@ -1,7 +1,7 @@
 import React from 'react';
 import './profileScreen.css';
-import Navside from '../../components/nav/navSide';
-import Footer from '../../components/footer/footer';
+import Navside from '../../components/Nav/navSide';
+import Footer from '../../components/Footer/footer';
 // import { auth } from '../Library/firebase';
 
 import { useAuth } from '@frontegg/react';
@@ -34,8 +34,6 @@ const ProfileScreen = () => {
               />
 
               <h1>{user.name ? user?.name : 'default'}</h1>
-
-
             </div>
           </div>
         </div>

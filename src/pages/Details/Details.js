@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { API_KEY, BASE_URL } from '../../utils/constans';
-import Button from '../../components/button/button';
+import Button from '../../components/Button/button';
 import { Link } from 'react-router-dom';
-import Cast from '../../components/cast/cast';
-import Simular from '../../components/simular/simular';
-import ModalTrailer from '../../components/trailer/modalTrailer';
+import Cast from '../../components/Cast/cast';
+import Simular from '../../components/Simular/simular';
+import ModalTrailer from '../../components/Trailer/modalTrailer';
 
 import { toast } from 'react-toastify';
 import { addMovieFromPlaylist } from '../../actions/fireStoreActions';
-import Loading from '../../components/loading/loading';
+import Loading from '../../components/Loading/loading';
 import { addMovieLocal } from '../../utils/localStro';
 import { useStore } from '../../stored';
 import StarRatings from 'react-star-ratings';
-import Navside from '../../components/nav/navSide';
-import Footer from '../../components/footer/footer';
+import Navside from '../../components/Nav/navSide';
+import Footer from '../../components/Footer/footer';
 import { AiOutlineHeart } from 'react-icons/ai';
 import './details.css';
 
@@ -71,7 +71,7 @@ function DetailsMovie() {
     }
 
     setLoadingAddMovie(true);
-    const newFavorite = await addMovieFromPlaylist(user.uid, data, media_type);
+    const newFavorite = await addMovieFromPlaylist(user.sid, data, media_type);
     setFavoriteList([...favoriteList, newFavorite]);
     setLoadingAddMovie(false);
     toast.success('Add new favorite success !');
@@ -170,7 +170,7 @@ function DetailsMovie() {
                     className="watch-link"
                     title="Thêm vào danh mục của tôi"
                   >
-                    <AiOutlineHeart />
+                    <AiOutlineHeart onClick={handleAddToFavorites} />
                   </span>
                 </div>
               </div>

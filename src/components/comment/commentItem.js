@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { calculateCreatedTime } from '../../utils/constans';
-import Reaction from '../reaction/reaction';
-import ShowReaction from '../reaction/showReaction';
+import Reaction from '../Reaction/reaction';
+import ShowReaction from '../Reaction/showReaction';
 import InputReply from './inputReply';
 import ReplyCommentList from './replyCommentList';
 import { useAuth } from '@frontegg/react';
