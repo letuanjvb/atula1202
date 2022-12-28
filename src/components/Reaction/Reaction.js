@@ -10,13 +10,13 @@ const Reaction = ({ comment, setShowReaction, showReaction }) => {
 
   const handleReact = (type) => {
     const docRef = doc(db, `comments/${comment.id}`);
-    if (comment?.reactions?.some((item) => item.userId === user.accessToken)) {
+    if (comment?.reactions?.some((item) => item.userId === user?.sid)) {
       const newReaction = comment.reactions.filter(
-        (item) => item.userId !== user.accessToken
+        (item) => item.userId !== user?.sid
       );
 
       const reactUserType = comment?.reactions.find(
-        (item) => item.userId === user.accessToken
+        (item) => item.userId === user?.sid
       ).type;
 
       if (type === reactUserType) {
@@ -28,14 +28,11 @@ const Reaction = ({ comment, setShowReaction, showReaction }) => {
       }
 
       updateDoc(docRef, {
-        reactions: [...newReaction, { userId: user.accessToken, type: type }],
+        reactions: [...newReaction, { userId: user?.sid, type: type }],
       });
     } else {
       updateDoc(docRef, {
-        reactions: [
-          ...comment?.reactions,
-          { userId: user.accessToken, type: type },
-        ],
+        reactions: [...comment?.reactions, { userId: user?.sid, type: type }],
       });
     }
 
@@ -75,10 +72,8 @@ const Reaction = ({ comment, setShowReaction, showReaction }) => {
             src={item.image}
             alt={item.name}
           />
-          {comment?.reactions.some(
-            (item) => item.userId === user.accessToken
-          ) &&
-            comment?.reactions.find((item) => item.userId === user.accessToken)
+          {comment?.reactions.some((item) => item.userId === user?.sid) &&
+            comment?.reactions.find((item) => item.userId === user?.sid)
               .type === item.name && <span className="dotted-blue" />}
         </div>
       ))}

@@ -32,6 +32,10 @@ const ProfileScreen = () => {
                 // src={user.photoURL ? user?.photoURL : '/user-non-avatar.png'}
                 src={user?.profilePictureUrl}
               />
+
+              <h1>{user.name ? user?.name : 'default'}</h1>
+
+
             </div>
           </div>
         </div>
