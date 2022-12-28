@@ -25,13 +25,17 @@ const ProfileScreen = () => {
             <div className="profileScreen_details">
               <h1>Gmail:</h1>
               <h2>{user.email}</h2>
+              <h1>Tên tài khoản: {user.name ? user?.name : 'default'}</h1>
 
               <img
                 alt="avatar"
                 // src={user.photoURL ? user?.photoURL : '/user-non-avatar.png'}
                 src={user?.profilePictureUrl}
               />
+
               <h1>{user.name ? user?.name : 'default'}</h1>
+
+
             </div>
           </div>
         </div>

@@ -7,7 +7,6 @@ import { BASE_URL, API_KEY } from '../../utils/constans';
 import Title from '../../components/shared/tittle';
 import Navside from '../../components/nav/navSide';
 
-
 function SearchResults() {
   const searchParams = useSearchParams();
 
@@ -59,8 +58,7 @@ function SearchResults() {
   }
 
   return (
-
-    <div className=''>
+    <div className="">
       <Navside />
       <div className="container bodyside">
         {/* Change document title */}

@@ -3,12 +3,9 @@ import './styles/app.css';
 import HomeScreen from './pages/home/homeScreen';
 // eslint-disable-next-line no-unused-vars
 import { Route, Routes, useLocation } from 'react-router-dom';
-import LoginScreen from './pages/loginPage/loginSreen';
-import { Auth } from './config/firebase';
 import ProfileScreen from './pages/profile/profileScreen';
 import Loading from './components/loading/loading';
-import { useStore } from './stored';
-import { useAuth, useLoginWithRedirect, ContextHolder } from '@frontegg/react';
+import { useAuth, useLoginWithRedirect } from '@frontegg/react';
 import Watchplayer from './components/tv/watchplayer';
 
 //pages
@@ -68,6 +65,30 @@ function App() {
       {/* bat buoc phai co tai khoan, neu khong se back ve Login */}
       {/* {!user ? (
         <LoginScreen />
+
+      ) : (
+        <Routes>
+          <Route path="/profile" element={<ProfileScreen />}></Route>
+          <Route path="/" element={<HomeScreen />}></Route>
+          <Route path="/usersetting" element={<UserSetting />}></Route>
+          <Route path="/search" element={<Search />}></Route>
+          <Route path="/results" element={<SearchResults />}></Route>
+          <Route path="/:media_type/:type" element={<ViewMorePage />}></Route>
+          <Route
+            path="/details/:media_type/:id"
+            element={<DetailsMovie />}
+          ></Route>
+          <Route
+            path="/watch/tv/:id/season/:season/esp/:esp"
+            element={<WatchTv />}
+          ></Route>
+          <Route path="/watch/movie/:id" element={<WatchMovie />}></Route>
+          <Route path="/player" element={<Player />}></Route>
+          <Route path="/navside" element={<Navside />}></Route>
+          <Route path="/watch/movie/:id" element={<WatchMovie />}></Route>
+        </Routes>
+      )}
+
       ) : ( */}
       <Routes>
         <Route path="/profile" element={<ProfileScreen />}></Route>
