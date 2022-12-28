@@ -30,7 +30,7 @@ const CommentItem = ({ item, movieId, listComment }) => {
     }
 
     const reactionApi = item?.reactions.find(
-      (item) => item.userId === user?.uid
+      (item) => item.userId === user?.sid
     );
     if (!reactionApi) return setReaction(null);
     if (reactionApi) {

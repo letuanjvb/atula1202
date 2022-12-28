@@ -1,21 +1,22 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
-import { deleteFavoriteMovie } from "../../actions/fireStoreActions";
-import MovieItem from "../../components/movie/movieItem";
-import Loading from "../../components/Loading/Loading";
-import { useStore } from "../../stored";
-import Title from "../../components/shared/tittle";
-import "./Favorite.css";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { deleteFavoriteMovie } from '../../actions/fireStoreActions';
+import MovieItem from '../../components/movie/movieItem';
+import Loading from '../../components/Loading/Loading';
+import { useStore } from '../../stored';
+import { useAuth } from '@frontegg/react';
+import Title from '../../components/shared/tittle';
+import './Favorite.css';
 
 const FavoriteList = () => {
-  const { favoriteList, user, setFavoriteList } = useStore((state) => state);
+  const { favoriteList, setFavoriteList } = useStore((state) => state);
+  const { user } = useAuth();
 
   const [loading, setLoading] = useState(false);
 
   const handleDeleteMovie = async (data) => {
     const result = window.confirm(
-      "Are you sure you want to delete this movie?"
+      'Are you sure you want to delete this movie?'
     );
     if (result) {
       if (!user) return;
@@ -28,17 +29,16 @@ const FavoriteList = () => {
 
       setFavoriteList(newFavoriteList);
       setLoading(false);
-      toast.success("Delete success !");
     }
   };
 
   return (
     <div className="favorite">
-      <Title title={"My favorite movie"} />
+      <Title title={'My favorite movie'} />
       <div className="container">
         <h1 className="favorite-title">Favorite Movie</h1>
 
-        {favoriteList.length > 0 ? (
+        {this.state.favoriteList !== undefined ? (
           <div className="grid-layout grid-gap-1rem-1rem">
             {favoriteList &&
               favoriteList.map((item) => (

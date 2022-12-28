@@ -31,11 +31,11 @@ function App() {
   const loginWithRedirect = useLoginWithRedirect();
 
   // Uncomment this to redirect to login automatically
-  useEffect(() => {
-    if (!isAuthenticated) {
-      loginWithRedirect();
-    }
-  }, [isAuthenticated, loginWithRedirect]);
+  // useEffect(() => {
+  //   if (!isAuthenticated) {
+  //     loginWithRedirect();
+  //   }
+  // }, [isAuthenticated, loginWithRedirect]);
 
   // useEffect(() => {
   //   // lưu thay đổi vào bộ nhớ cục bộ của trình duyệt

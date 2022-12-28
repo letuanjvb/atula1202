@@ -21,7 +21,7 @@ const Comment = ({ movieId }) => {
     postComment({
       responseTo: null,
       movieId: movieId,
-      userId: user.accessToken, //user.uid,
+      userId: user.sid, //user.uid,
       userName: user?.name, //user.displayName ? user.displayName : user.email,
       avatar: user?.profilePictureUrl, //user.photoURL ? user.photoURL : '/user-non-avatar.png',
       content: comment,

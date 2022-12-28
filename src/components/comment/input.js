@@ -10,7 +10,11 @@ const Input = ({ user, comment, setComment, loading }) => {
       <img
         className="avatar"
         alt="avatar"
-        src={user?.profilePictureUrl}
+        src={
+          user?.profilePictureUrl
+            ? user?.profilePictureUrl
+            : '/user-non-avatar.png'
+        }
         // src={user.photoURL ? user.photoURL : '/user-non-avatar.png'}
       />
 
