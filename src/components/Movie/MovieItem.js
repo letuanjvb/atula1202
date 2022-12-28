@@ -1,6 +1,6 @@
 import React from 'react';
-import ImageFade from '../shared/imgFade';
-import './movieItem.css';
+import ImageFade from '../shared/ImgFade';
+import './MovieItem.css';
 import { useState } from 'react';
 
 function MovieItem({ data }) {
@@ -13,7 +13,8 @@ function MovieItem({ data }) {
         onMouseEnter={() => setIsShown(true)}
         onMouseLeave={() => setIsShown(false)}
         className="movie-item"
-        style={{ background: 'black' }}>
+        style={{ background: 'black' }}
+      >
         <ImageFade
           lazy_src={
             poster_path
@@ -26,7 +27,8 @@ function MovieItem({ data }) {
           <div className="movie-item-hover">
             <div>Phim: {data.title ? data.title : data.name}</div>
             <div>
-              Rating: <yellow>{data.vote_average}/10</yellow> ({data.vote_count}vote)
+              Rating: <yellow>{data.vote_average}/10</yellow> ({data.vote_count}
+              vote)
             </div>
             <div>Ngày phát hành: {data.release_date}</div>
             <div>
@@ -36,7 +38,9 @@ function MovieItem({ data }) {
             <div>{data.adult}</div>
           </div>
         )}
-        <p className="line-clamp-1 movie-item-title">{data?.title || data?.name}</p>
+        <p className="line-clamp-1 movie-item-title">
+          {data?.title || data?.name}
+        </p>
       </div>
     </div>
   );

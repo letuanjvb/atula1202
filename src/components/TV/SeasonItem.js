@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
-import { BASE_URL, API_KEY } from "../../utils/constans";
-import EspItem from "./espItem";
+import React, { useEffect, useRef, useState } from 'react';
+import { BASE_URL, API_KEY } from '../../utils/constans';
+import EspItem from './EspItem';
 
 const SeasonItem = ({ item, seasonCurrent, setSeasonCurrent, id }) => {
   const [espData, setEspData] = useState([]);
@@ -36,7 +36,7 @@ const SeasonItem = ({ item, seasonCurrent, setSeasonCurrent, id }) => {
           src={
             item.poster_path
               ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
-              : "https://bitsofco.de/content/images/2018/12/Screenshot-2018-12-16-at-21.06.29.png"
+              : 'https://bitsofco.de/content/images/2018/12/Screenshot-2018-12-16-at-21.06.29.png'
           }
           alt={item.name}
         />

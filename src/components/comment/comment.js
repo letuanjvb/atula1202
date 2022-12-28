@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from 'react';
-import './comment.css';
+import './Comment.css';
 import 'boxicons';
 import { postComment } from '../../actions/fireStoreActions';
-import Input from './input';
-import CommentItem from './commentItem';
+import Input from './Input';
+import CommentItem from './CommentItem';
 import useFireStore from '../../hooks/useFireStore';
 import { useAuth } from '@frontegg/react';
 

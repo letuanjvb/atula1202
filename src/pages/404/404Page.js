@@ -1,12 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Title from "../../components/Shared/Title";
-import "./404.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Title from '../../components/shared/Tittle.js';
+import './404.css';
 
 const ErrorPage = () => {
   return (
     <>
-      <Title title={"Something went wrong!"} />
+      <Title title={'Something went wrong!'} />
 
       <div className="error">
         <div className="error-body container">

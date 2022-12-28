@@ -7,13 +7,13 @@ import 'swiper/swiper.min.css';
 import { useEffect, useState } from 'react';
 
 import useInnerWidth from '../../hooks/useInnerWidth';
-import Skeleton from '../skeleton/skeleton';
+import Skeleton from '../Skeleton/Skeleton';
 
-import './simular.css';
+import './Simular.css';
 
 import { API_KEY, BASE_URL } from '../../utils/constans';
 import { Link, useParams } from 'react-router-dom';
-import MovieItem from '../movie/movieItem';
+import MovieItem from '../Movie/MovieItem';
 
 const Simular = () => {
   SwiperCore.use([Navigation]);
@@ -42,7 +42,9 @@ const Simular = () => {
 
   useEffect(() => {
     const getMovie = () => {
-      fetch(`${BASE_URL}/${media_type || 'tv'}/${id}/similar?api_key=${API_KEY}`)
+      fetch(
+        `${BASE_URL}/${media_type || 'tv'}/${id}/similar?api_key=${API_KEY}`
+      )
         .then((res) => res.json())
         .then((data) => {
           setMovie(data.results);
@@ -63,7 +65,12 @@ const Simular = () => {
       <div className="title">
         <h1>Similar</h1>
       </div>
-      <Swiper navigation grabCursor={true} spaceBetween={20} slidesPerView={item}>
+      <Swiper
+        navigation
+        grabCursor={true}
+        spaceBetween={20}
+        slidesPerView={item}
+      >
         {!loading ? (
           movie
             ?.filter((p) => p.id !== id)

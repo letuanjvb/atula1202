@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { deleteFavoriteMovie } from '../../actions/fireStoreActions';
-import MovieItem from '../../components/movie/movieItem';
+import MovieItem from '../../components/Movie/MovieItem';
 import Loading from '../../components/Loading/Loading';
 import { useStore } from '../../stored';
 import { useAuth } from '@frontegg/react';
-import Title from '../../components/shared/tittle';
+import Title from '../../components/shared/Tittle';
 import './Favorite.css';
 
 const FavoriteList = () => {

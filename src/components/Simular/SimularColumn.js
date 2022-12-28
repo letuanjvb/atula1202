@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import { API_KEY, BASE_URL } from "../../utils/constans";
-import ImageFade from "../shared/imgFade";
+import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { API_KEY, BASE_URL } from '../../utils/constans';
+import ImageFade from '../shared/ImgFade';
 
 function SimularColumn() {
   const params = useParams();
@@ -34,7 +34,7 @@ function SimularColumn() {
                 lazy_src={
                   item.poster_path
                     ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
-                    : "https://bitsofco.de/content/images/2018/12/Screenshot-2018-12-16-at-21.06.29.png"
+                    : 'https://bitsofco.de/content/images/2018/12/Screenshot-2018-12-16-at-21.06.29.png'
                 }
                 alt={item.title}
                 className="simularColumn-img"

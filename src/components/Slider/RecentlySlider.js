@@ -5,9 +5,9 @@ import SwiperCore, { Navigation } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
 import useInnerWidth from '../../hooks/useInnerWidth';
-import './slider.css';
+import './Slider.css';
 import { Link } from 'react-router-dom';
-import MovieItem from '../movie/movieItem';
+import MovieItem from '../Movie/MovieItem';
 
 const RecentlySlider = ({ data }) => {
   SwiperCore.use([Navigation]);
@@ -30,7 +30,12 @@ const RecentlySlider = ({ data }) => {
       <div className="title">
         <h1>Đã xem gần đây</h1>
       </div>
-      <Swiper navigation grabCursor={true} spaceBetween={20} slidesPerView={item}>
+      <Swiper
+        navigation
+        grabCursor={true}
+        spaceBetween={20}
+        slidesPerView={item}
+      >
         {data?.map((item) => (
           <SwiperSlide key={item.id}>
             <Link to={`/details/${item.media_type}/${item.id}`}>

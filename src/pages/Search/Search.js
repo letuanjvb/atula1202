@@ -1,12 +1,12 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Title from '../../components/shared/tittle';
+import Title from '../../components/shared/Tittle';
 import Tippy from '@tippyjs/react/headless';
-import ListResults from '../../components/result/listResults';
+import ListResults from '../../components/Result/ListResults';
 import { API_KEY, BASE_URL } from '../../utils/constans';
-import Navside from '../../components/nav/navSide';
-import Footer from '../../components/footer/footer';
-import './search.css';
+import Navside from '../../components/Nav/NavSide';
+import Footer from '../../components/Footer/Footer';
+import './Search.css';
 
 function Search() {
   const [keyWord, setKeyWord] = useState('');

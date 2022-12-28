@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './navSide.css';
+import './NavSide.css';
 import logo from '../../images/logo.png';
 import { MdOutlineMovieFilter } from 'react-icons/md';
 import { RiMovie2Line } from 'react-icons/ri';

@@ -1,11 +1,11 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import MovieItem from '../../components/movie/movieItem';
-import Skeleton from '../../components/skeleton/skeleton';
+import MovieItem from '../../components/Movie/MovieItem';
+import Skeleton from '../../components/Skeleton/Skeleton';
 import { useSearchParams } from '../../hooks/useSearchParams';
 import { BASE_URL, API_KEY } from '../../utils/constans';
-import Title from '../../components/shared/tittle';
-import Navside from '../../components/nav/navSide';
+import Title from '../../components/shared/Tittle';
+import Navside from '../../components/Nav/NavSide';
 
 function SearchResults() {
   const searchParams = useSearchParams();
