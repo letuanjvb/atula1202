@@ -11,7 +11,7 @@ import { CgProfile } from 'react-icons/cg';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { FaSignOutAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { ContextHolder } from '@frontegg/react';
+import { useAuth, useLoginWithRedirect, ContextHolder } from '@frontegg/react';
 import { AdminPortal } from '@frontegg/react';
 
 const logout = () => {
@@ -24,6 +24,8 @@ const handleClick = () => {
 };
 
 const Navside = () => {
+  const { user, isAuthenticated } = useAuth();
+  const loginWithRedirect = useLoginWithRedirect();
   const history = useNavigate();
 
   return (
@@ -112,12 +114,21 @@ const Navside = () => {
           </li>
           <li className="nav-item">
             <div className="nav-link">
-              <span
-                className="link-text profileScreen_signOut"
-                onClick={() => logout()}
-              >
-                Đăng xuất
-              </span>
+              {isAuthenticated ? (
+                <span
+                  className="link-text profileScreen_signOut"
+                  onClick={() => logout()}
+                >
+                  Đăng xuất
+                </span>
+              ) : (
+                <span
+                  className="link-text profileScreen_signOut"
+                  onClick={() => loginWithRedirect()}
+                >
+                  Đăng nhập
+                </span>
+              )}
             </div>
           </li>
         </ul>

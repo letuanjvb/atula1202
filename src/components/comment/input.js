@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import { useAuth, useLoginWithRedirect, ContextHolder } from '@frontegg/react';
 
 const Input = ({ user, comment, setComment, loading }) => {
   const location = useLocation();
+  const loginWithRedirect = useLoginWithRedirect();
 
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -31,7 +33,10 @@ const Input = ({ user, comment, setComment, loading }) => {
             <h3>
               You need{' '}
               <Link
-                to={`/login?redirect=${encodeURIComponent(location.pathname)}`}
+                // href={`https://app-1ivhele6gdhi.frontegg.com/oauth/account/login?redirect=${encodeURIComponent(
+                //   location.pathname
+                // )}`}
+                onClick={() => loginWithRedirect()}
               >
                 login
               </Link>{' '}
