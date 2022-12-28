@@ -1,12 +1,12 @@
 import React, { useMemo, useState } from 'react';
-import RecentlySlider from '../Slider/recentlySlider';
-import SliderMovie from '../Slider/sliderMovie';
-import SliderTv from '../Slider/sliderTv';
+import RecentlySlider from '../Slider/RecentlySlider';
+import SliderMovie from '../Slider/SliderMovie';
+import SliderTv from '../Slider/SliderTv';
 import { getMovieHistory } from '../../utils/localStro';
 // import Title from '../../components/Shared/Title';
 import MoviePoster from '../MoviePoster/MoviePoster';
 import { motion, AnimatePresence } from 'framer-motion';
-import Skeleton from '../Skeleton/skeleton';
+import Skeleton from '../Skeleton/Skeleton';
 
 const baseUrl = process.env.REACT_APP_BASE_URL;
 

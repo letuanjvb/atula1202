@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { calculateCreatedTime } from '../../utils/constans';
-import Reaction from '../Reaction/reaction';
-import ShowReaction from '../Reaction/showReaction';
-import InputReply from './inputReply';
-import ReplyCommentList from './replyCommentList';
+import Reaction from '../Reaction/Reaction';
+import ShowReaction from '../Reaction/ShowReaction';
+import InputReply from './InputReply';
+import ReplyCommentList from './ReplyCommentList';
 import { useAuth } from '@frontegg/react';
 
 const CommentItem = ({ item, movieId, listComment }) => {

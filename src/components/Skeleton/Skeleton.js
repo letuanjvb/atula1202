@@ -1,5 +1,5 @@
-import React from "react";
-import "./skeleton.css";
+import React from 'react';
+import './Skeleton.css';
 
 function Skeleton() {
   return (

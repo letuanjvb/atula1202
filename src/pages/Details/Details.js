@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { API_KEY, BASE_URL } from '../../utils/constans';
-import Button from '../../components/Button/button';
+import Button from '../../components/Button/Button';
 import { Link } from 'react-router-dom';
-import Cast from '../../components/Cast/cast';
-import Simular from '../../components/Simular/simular';
-import ModalTrailer from '../../components/Trailer/modalTrailer';
+import Cast from '../../components/Cast/Cast';
+import Simular from '../../components/Simular/Simular';
+import ModalTrailer from '../../components/Trailer/ModalTrailer';
 
 import { toast } from 'react-toastify';
 import { addMovieFromPlaylist } from '../../actions/fireStoreActions';
-import Loading from '../../components/Loading/loading';
+import Loading from '../../components/Loading/Loading';
 import { addMovieLocal } from '../../utils/localStro';
 import { useStore } from '../../stored';
 import StarRatings from 'react-star-ratings';
-import Navside from '../../components/Nav/navSide';
-import Footer from '../../components/Footer/footer';
+import Navside from '../../components/Nav/NavSide';
+import Footer from '../../components/Footer/Footer';
 import { AiOutlineHeart } from 'react-icons/ai';
-import './details.css';
+import './Details.css';
 
 function DetailsMovie() {
   // const param = useParams();

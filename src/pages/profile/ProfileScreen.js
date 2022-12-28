@@ -1,7 +1,7 @@
 import React from 'react';
-import './profileScreen.css';
-import Navside from '../../components/Nav/navSide';
-import Footer from '../../components/Footer/footer';
+import './ProfileScreen.css';
+import Navside from '../../components/Nav/NavSide';
+import Footer from '../../components/Footer/Footer';
 // import { auth } from '../Library/firebase';
 
 import { useAuth } from '@frontegg/react';

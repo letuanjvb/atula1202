@@ -7,13 +7,13 @@ import 'swiper/swiper.min.css';
 import { useEffect, useState } from 'react';
 
 import useInnerWidth from '../../hooks/useInnerWidth';
-import Skeleton from '../Skeleton/skeleton';
+import Skeleton from '../Skeleton/Skeleton';
 
-import './simular.css';
+import './Simular.css';
 
 import { API_KEY, BASE_URL } from '../../utils/constans';
 import { Link, useParams } from 'react-router-dom';
-import MovieItem from '../Movie/movieItem';
+import MovieItem from '../Movie/MovieItem';
 
 const Simular = () => {
   SwiperCore.use([Navigation]);

@@ -1,6 +1,6 @@
 import axios from '../../library/axios';
 import React, { useEffect, useState } from 'react';
-import './banner.css';
+import './Banner.css';
 import requests from '../../library/requests';
 import { useNavigate } from 'react-router-dom';
 import videoBg from '../../videos/WizardBattle.mp4';
@@ -73,14 +73,11 @@ const Banner = () => {
           </div>
         </div>
         <h1 className="banner_description">
-
-
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
           faucibus, nulla sed tristique mattis, justo dui volutpat leo, ac
           dapibus dolor ligula ac urna. Quisque iaculis pretium purus, non
           efficitur neque sodales nec. Nunc ac mi purus. Phasellus condimentum
-          mauris dui, sit amet tempor enim elementum scelerisque. 
-
+          mauris dui, sit amet tempor enim elementum scelerisque.
         </h1>
       </div>
       <div className="banner_gradient" />

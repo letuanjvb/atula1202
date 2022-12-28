@@ -5,9 +5,9 @@ import SwiperCore, { Navigation } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
 import useInnerWidth from '../../hooks/useInnerWidth';
-import './slider.css';
+import './Slider.css';
 import { Link } from 'react-router-dom';
-import MovieItem from '../Movie/movieItem';
+import MovieItem from '../Movie/MovieItem';
 
 const RecentlySlider = ({ data }) => {
   SwiperCore.use([Navigation]);
